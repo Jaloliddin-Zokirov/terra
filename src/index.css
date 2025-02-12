@@ -17,7 +17,12 @@ body,
   flex-direction: column;
   height: 100vh;
   margin: 0;
+  background-color: #111219;
   transition: all 0.4s ease;
+}
+
+.modal {
+  overflow: hidden;
 }
 
 main {
