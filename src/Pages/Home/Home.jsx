@@ -1,9 +1,11 @@
-import React from 'react'
+import { SuperCar } from "./_components";
 
 const Home = () => {
   return (
-    <section>Home</section>
-  )
-}
+    <section className="bg-[#111219] relative">
+      <SuperCar />
+    </section>
+  );
+};
 
-export default Home
+export default Home;
