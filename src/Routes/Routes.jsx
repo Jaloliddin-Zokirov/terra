@@ -9,6 +9,7 @@ import Contacts from "../Pages/Contacts/Contacts";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
 import Condition from "../Pages/Condition/Condition";
+import Faq from "../Pages/Faq/Faq";
 
 const routes = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const routes = createBrowserRouter([
       {
         path: "condition",
         element: <Condition />,
+      },
+      {
+        path: "faq",
+        element: <Faq />,
       },
     ],
   },
