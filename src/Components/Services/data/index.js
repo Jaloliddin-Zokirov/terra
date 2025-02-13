@@ -24,3 +24,18 @@ export const serviceBug = [
     title: "Fruits, Drinks, BBQ",
   },
 ];
+
+export const serviceBugCards = [
+  {
+    image:'https://terra-rentacar.netlify.app/assets/uslug-sport-1-DxYPOXOJ.jpg',
+    count:1000,
+  },
+  {
+    image:'https://terra-rentacar.netlify.app/assets/uslug-sport-2-D-WBhbOk.jpg',
+    count:2000,
+  },
+  {
+    image:'https://terra-rentacar.netlify.app/assets/uslug-sport-3-DyPjBdp1.jpg',
+    count:3000,
+  }
+]

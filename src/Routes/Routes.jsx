@@ -12,6 +12,7 @@ import ServicesCar from "../Components/Services/ServicesCar";
 import Condition from "../Pages/Condition/Condition";
 import Faq from "../Pages/Faq/Faq";
 import ServicesBag from "../Components/Services/ServicesBag";
+import BlogDetail from "../Pages/Blog/BlogDetail";
 
 const routes = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "blog/:id",
+        element: <BlogDetail />,
       },
       {
         path: "condition",

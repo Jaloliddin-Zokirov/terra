@@ -1,5 +1,7 @@
 import { CircleChevronRight } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
+import InstagramSlider from "./components/InstagramSlider";
 import { blogInfo } from "./data";
 
 const Blog = () => {
@@ -16,7 +18,10 @@ const Blog = () => {
           Blog
         </h3>
         {blogInfo.map((item, index) => (
-          <div class="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px]" key={index}>
+          <div
+            class="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-6"
+            key={index}
+          >
             <div class="flex items-center gap-8">
               <div>
                 <img class="size-92" src={item.img} alt="img" />
@@ -28,14 +33,18 @@ const Blog = () => {
                 <p class="text-base py- p480:text-lg font-serif">{item.text}</p>
                 <div class="flex items-center justify-between">
                   <span>{item.date}</span>
-                  <a href="/blogview1" class="transform hover:scale-110">
+                  <Link
+                    to={`/blog/${item.id}`}
+                    class="transform hover:scale-110"
+                  >
                     <CircleChevronRight />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         ))}
+        <InstagramSlider />
       </div>
     </div>
   );
