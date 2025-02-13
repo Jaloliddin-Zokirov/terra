@@ -8,6 +8,7 @@ import About from "../Pages/About/About";
 import Contacts from "../Pages/Contacts/Contacts";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
+import Condition from "../Pages/Condition/Condition";
 
 const routes = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "condition",
+        element: <Condition />,
       },
     ],
   },
