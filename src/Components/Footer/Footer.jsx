@@ -20,7 +20,7 @@ const Footer = () => {
     <footer className="relative bg-[#111219] z-10">
       <img
         className="absolute z-[-1px] right-0 bottom-0 opacity-45"
-        src="McLaren_footer.png"
+        src="/McLaren_footer.png"
         width={800}
         height={477}
         alt="McLaren backround image"
@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="text-start mb-6 md:mb-0">
             <Link to="/" className="block mb-5 mx-auto">
               <img
-                src="terra_logo.png"
+                src="/terra_logo.png"
                 width={110}
                 height={66}
                 className="w-[110] h-[66] mx-auto md:mx-0"
