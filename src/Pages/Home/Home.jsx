@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { LuxuryCar } from "../../Components/LuxuryCar/LuxuryCar";
 
 const Home = () => {
   return (
-    <section>Home</section>
-  )
-}
+    <section>
+      <LuxuryCar />
+    </section>
+  );
+};
 
-export default Home
+export default Home;

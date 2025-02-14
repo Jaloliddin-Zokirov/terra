@@ -46,20 +46,20 @@ const Brands = () => {
           {doubledBrands?.map((el) => {
             return (
               <SwiperSlide key={el.id} className="flex h-full">
-        <Link
-          to={"/cars"}
-          className="flex flex-col justify-center my-[64.5px] items-center w-full h-full flex-grow"
-        >
-          <img
-            className="imgswiper mx-auto w-[40px] h-[40px]"
-            src={`${Forimage}/${el.image_src}`}
-            width={40}
-            height={40}
-            alt=""
-          />
-          <p className="text-[#7E7E7E] font-bold">{el.title}</p>
-        </Link>
-      </SwiperSlide>
+                <Link
+                  to={"/cars"}
+                  className="flex flex-col justify-center my-[64.5px] items-center w-full h-full flex-grow"
+                >
+                  <img
+                    className="imgswiper mx-auto w-[40px] h-[40px]"
+                    src={`${Forimage}/${el.image_src}`}
+                    width={40}
+                    height={40}
+                    alt=""
+                  />
+                  <p className="text-[#7E7E7E] font-bold">{el.title}</p>
+                </Link>
+              </SwiperSlide>
             );
           })}
         </Swiper>

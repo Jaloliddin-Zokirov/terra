@@ -5,26 +5,7 @@ import { useSelector } from "react-redux";
 
 export const FaqSection = () => {
   const { lang } = useSelector((state) => state.lang);
-  const [open1, setOpen1] = useState(false);
-  const handleOpen1 = () => {
-    setOpen1(!open1);
-  };
-  const [open2, setOpen2] = useState(false);
-  const handleOpen2 = () => {
-    setOpen2(!open2);
-  };
-  const [open3, setOpen3] = useState(false);
-  const handleOpen3 = () => {
-    setOpen3(!open3);
-  };
-  const [open4, setOpen4] = useState(false);
-  const handleOpen4 = () => {
-    setOpen4(!open4);
-  };
-  const [open5, setOpen5] = useState(false);
-  const handleOpen5 = () => {
-    setOpen5(!open5);
-  };
+  const [open, setOpen] = useState();
   return (
     <section id="faqSection">
       <div className=" mx-auto px-12 faq__inner  py-16   ">
@@ -35,7 +16,7 @@ export const FaqSection = () => {
         <div className="faq__info1 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={handleOpen1}
+              onClick={() => setOpen(1)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -51,7 +32,7 @@ export const FaqSection = () => {
                 <RiArrowLeftDoubleFill fill="#c9c6c6" />
               </div>
             </div>
-            {open1 ? (
+            {open === 1 ? (
               <div className="info1__text absolute top-[calc(100%)]  z-[2] bg-[#272933] p-4 rounded-md ">
                 <p className="text-[18px] text-white">
                   {lang === "eng"
@@ -62,7 +43,7 @@ export const FaqSection = () => {
             ) : (
               ""
             )}
-            {open1 ? (
+            {open === 1 ? (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-[0] mt-[15px] bg-gray-500"></div>
             ) : (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-full mt-[15px] bg-gray-500"></div>
@@ -70,10 +51,10 @@ export const FaqSection = () => {
           </div>
         </div>
 
-        <div className="faq__info2 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
-          <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
+        <div className="faq__info2 p-4 mx-auto  flex flex-col items-center max-w-[900px] w-full">
+          <div className="info1__title w-full flex flex-col gap-4 items-center justify-center relative">
             <div
-              onClick={handleOpen2}
+              onClick={() => setOpen(2)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -89,7 +70,7 @@ export const FaqSection = () => {
                 <RiArrowLeftDoubleFill fill="#c9c6c6" />
               </div>
             </div>
-            {open2 ? (
+            {open === 2 ? (
               <div className="info1__text absolute top-[calc(100%)]  z-[2] bg-[#272933] p-4 rounded-md ">
                 <p className="text-[18px] text-white">
                   {lang === "eng"
@@ -100,7 +81,7 @@ export const FaqSection = () => {
             ) : (
               ""
             )}
-            {open2 ? (
+            {open === 2 ? (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-[0] mt-[15px] bg-gray-500"></div>
             ) : (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-full mt-[15px] bg-gray-500"></div>
@@ -111,7 +92,7 @@ export const FaqSection = () => {
         <div className="faq__info3 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={handleOpen3}
+              onClick={() => setOpen(3)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -127,7 +108,7 @@ export const FaqSection = () => {
                 <RiArrowLeftDoubleFill fill="#c9c6c6" />
               </div>
             </div>
-            {open3 ? (
+            {open === 3 ? (
               <div className="info1__text absolute top-[calc(100%)]  z-[2] bg-[#272933] p-4 rounded-md ">
                 <p className="text-[18px] text-white">
                   {lang === "eng"
@@ -138,7 +119,7 @@ export const FaqSection = () => {
             ) : (
               ""
             )}
-            {open3 ? (
+            {open === 3 ? (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-[0] mt-[15px] bg-gray-500"></div>
             ) : (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-full mt-[15px] bg-gray-500"></div>
@@ -149,7 +130,7 @@ export const FaqSection = () => {
         <div className="faq__info4 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={handleOpen4}
+              onClick={() => setOpen(4)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -165,7 +146,7 @@ export const FaqSection = () => {
                 <RiArrowLeftDoubleFill fill="#c9c6c6" />
               </div>
             </div>
-            {open4 ? (
+            {open === 4 ? (
               <div className="info1__text absolute top-[calc(100%)]   z-[2] bg-[#272933] p-4 rounded-md ">
                 <p className="text-[18px] text-white">
                   {lang === "eng"
@@ -176,7 +157,7 @@ export const FaqSection = () => {
             ) : (
               ""
             )}
-            {open4 ? (
+            {open === 4 ? (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-[0] mt-[15px] bg-gray-500"></div>
             ) : (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-full mt-[15px] bg-gray-500"></div>
@@ -187,7 +168,7 @@ export const FaqSection = () => {
         <div className="faq__info5 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={handleOpen5}
+              onClick={() => setOpen(5)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -203,7 +184,7 @@ export const FaqSection = () => {
                 <RiArrowLeftDoubleFill fill="#c9c6c6" />
               </div>
             </div>
-            {open5 ? (
+            {open === 5 ? (
               <div className="info1__text absolute top-[calc(100%)]   bg-[#272933] p-4 rounded-md ">
                 <p className="text-[18px] text-white">
                   {lang === "eng"
@@ -214,7 +195,7 @@ export const FaqSection = () => {
             ) : (
               ""
             )}
-            {open5 ? (
+            {open === 5 ? (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-[0] mt-[15px] bg-gray-500"></div>
             ) : (
               <div className="info1__liner mx-auto h-[1px] transition-all ease-in duration-500 w-full mt-[15px] bg-gray-500"></div>
