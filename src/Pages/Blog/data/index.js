@@ -2,37 +2,68 @@ export const blogInfo = [
   {
     id: 1,
     img: "https://terra-rentacar.netlify.app/assets/blog-1-CqRaJa1U.jpg",
-    title: "Top 3 Destinations to Visit in Dubai in a Rental Car",
-    text: "One of the main reasons to hire a car in Dubai is the quality of the UAE roads. According to the World Economic Forum, the Emirates belong to the top seven countries with the most exemplary road infrastructure.",
-    date: "25 Seb 2022",
-    inbox_title: "Abu-Dhabi",
-    top_text:
+    title_en: "Top 3 Destinations to Visit in Dubai in a Rental Car",
+    title_ru:
+      "Топ-3 мест, которые стоит посетить в Дубае на арендованном автомобиле",
+    text_en:
+      "One of the main reasons to hire a car in Dubai is the quality of the UAE roads. According to the World Economic Forum, the Emirates belong to the top seven countries with the most exemplary road infrastructure.",
+    text_ru:
+      "Одна из главных причин арендовать автомобиль в Дубае — качество дорог ОАЭ. По данным Всемирного экономического форума, Эмираты входят в семерку стран с лучшей дорожной инфраструктурой.",
+    date_en: "25 Seb 2022",
+    date_ru: "25 сентября 2022",
+    inbox_title_en: "Abu-Dhabi",
+    inbox_title_ru: "Абу-Даби",
+    top_text_en:
       "One of the main reasons to hire a car in Dubai is the quality of the UAE roads. According to the World Economic Forum, the Emirates belong to the top seven countries with the most exemplary road infrastructure. All the roads and carriageways are constantly maintained and looked after, and their excellent condition is the result of a special government program.This is why driving from Dubai to far away destinations seems so exciting and thrilling! And if you are fond of new experiences and adventure, your Dubai holiday will not be complete without visiting a few fascinating UAU districts.",
-    bottom_text:
+    top_text_ru:
+      "Одной из главных причин арендовать автомобиль в Дубае является качество дорог ОАЭ. По данным Всемирного экономического форума, Эмираты входят в семерку стран с лучшей дорожной инфраструктурой. Все дороги и шоссе постоянно ремонтируются и содержатся в идеальном состоянии благодаря специальной правительственной программе. Именно поэтому поездка из Дубая в отдаленные места кажется такой захватывающей и волнующей! И если вы любите новые впечатления и приключения, ваш отпуск в Дубае не будет полным без посещения нескольких увлекательных районов ОАЭ.",
+    bottom_text_en:
       "If the combination of adventure and history is one of your personal weaknesses, then Hatta should never be off your list of primary destinations. A journey that takes only a couple of hours will bring you to a noticeably cooler mountainous climate. Thanks to its high-altitude location among the beautiful Hajar Mountains, the sense of space and release you will feel here after the suffocating heat of Dubai is what you really need for a change and fresh impressions.This trip will broaden your Emirates experience as it lets you to explore an absolutely different area with remarkable features that include, but not limit to the greenness of the vast Wadi Hatta Park, the enormity of the world's largest inclined mural, the birdlife diversity of the Swan Lake, and a grand spaciousness of Hatta Dam offering everyone to take an active part in various watersport experiences. It would be a gorgeous bonus if you try to extend your visit with an overnight stay in one of the Hatta hotels, motels, and resorts. This will save you from a sense of missed opportunities and allow you to enjoy the lavish local hospitality and its distinctive cuisine. Treat yourself with memorable outdoor activities such as a mountainous hiking and biking, a thrilling paragliding flight over endemic peaks, valleys and plateaus, or take an insightful tour to the marvelous Honeybee Garden and Discovery Center.",
+    bottom_text_ru:
+      "Если сочетание приключений и истории - одна из ваших слабостей, то Хатта никогда не должна выпадать из списка ваших основных мест назначения. Путешествие, которое займет всего пару часов, перенесет вас в заметно более прохладный горный климат. Благодаря своему высокогорному расположению среди красивых гор Хаджар, ощущение простора и свободы, которое вы почувствуете здесь после душной жары Дубая, - это то, что вам действительно нужно для перемен и новых впечатлений. Эта поездка расширит ваш опыт ОАЭ, поскольку позволит вам исследовать совершенно другой район с замечательными достопримечательностями, которые включают в себя, помимо прочего, зелень просторного парка Вади Хатта, величину крупнейшего в мире наклонного мурала, разнообразие птиц на Лебедином озере, а также величественное просторное водохранилище Хатта, предлагающее всем возможность принять активное участие в различных водных видах спорта. Прекрасным бонусом будет попытка продлить ваше посещение ночевкой в одном из отелей, мотелей или курортов Хатты. Это избавит вас от чувства упущенных возможностей и позволит насладиться роскошным местным гостеприимством и его неповторимой кухней. Побалуйте себя запоминающимися мероприятиями на свежем воздухе, такими как пешие походы и катание на велосипедах в горах, захватывающий полет на параплане над эндемичными вершинами, долинами и плато, или отправьтесь на познавательную экскурсию в чудесный Сад пчел и центр открытий.",
   },
   {
     id: 2,
     img: "https://terra-rentacar.netlify.app/assets/blog-2-BV6fNMEe.jpg",
-    title: "Top 5 wonderful spots for a car photo session in Dubai",
-    text: "There are so many wonderful things to do in Dubai, but when you rent a car your opportunities are nearly doubled. The number of places you will die to go to and make memorable pictures is such that it rented?",
-    date: "11 Feb 2022",
-    inbox_title: "Palm Jumeirah",
-    top_text:
+    title_en: "Top 5 wonderful spots for a car photo session in Dubai",
+    title_ru: "Топ-5 замечательных мест для фотосессии с автомобилем в Дубае",
+    text_en:
+      "There are so many wonderful things to do in Dubai, but when you rent a car your opportunities are nearly doubled. The number of places you will die to go to and make memorable pictures is such that it rented?",
+    text_ru:
+      "В Дубае так много замечательных мест, но когда вы арендуете автомобиль, ваши возможности практически удваиваются. Количество мест, которые вы мечтаете посетить и сделать запоминающиеся фотографии, настолько велико, что вы просто не можете устоять перед арендой транспортного средства, если не на день-два, то",
+    date_en: "11 Feb 2022",
+    date_ru: "11 февраля 2022",
+    inbox_title_en: "Palm Jumeirah",
+    inbox_title_ru: "Пальма Джумейра",
+    top_text_en:
       "There are so many wonderful things to do in Dubai, but when you rent a car your opportunities are nearly doubled. The number of places you will die to go to and make memorable pictures is such that it makes you impossible to resist to hire a mode of transportation, if not for a day or two, then at least for a couple of hours. And, while doing so, who could prove against the weakness of taking a photo of themselves inside or near the car they’ve rented? But how to take the impressive-looking photos against a car and a Dubai background that will leave you with fond memories and knock out your friends? It often happens, sadly, that when you see a great spot for a picture, you face some obstacles such as heavy traffic, inability to stop, or getting rid of the crowds – just to name but a few. Nevertheless, it can still be possibl Let us share with you a few secrets that can help you to take really interesting and unforgettable amateur photos. First of all, Dubai is a bit more than only strictly underground parking and, if you know the city as well as we do, you can find plenty of great locations where you can stop without being fined or asked to move on. So, let’s find out more about just a few of these places that have been repeatedly checked out for their feasibility and impact.",
-    bottom_text:
+    top_text_ru:
+      "В Дубае так много замечательных мест, но когда вы арендуете автомобиль, ваши возможности практически удваиваются. Количество мест, которые вы мечтаете посетить и сделать запоминающиеся фотографии, настолько велико, что вы просто не можете устоять перед арендой транспортного средства, если не на день-два, то хотя бы на пару часов. И, делая это, кто может устоять перед слабостью сделать фото себя внутри или рядом с арендованным автомобилем? Но как сделать впечатляющие фотографии на фоне автомобиля и Дубая, которые оставят вам приятные воспоминания и поразят ваших друзей? К сожалению, часто бывает так, что, увидев отличное место для фото, вы сталкиваетесь с некоторыми препятствиями, такими как плотный трафик, невозможность остановиться или необходимость избавиться от толпы - это лишь некоторые из них. Тем не менее, это все еще возможно. Давайте поделимся с вами несколькими секретами, которые помогут вам сделать действительно интересные и незабываемые любительские фотографии. Прежде всего, Дубай - это немного больше, чем просто подземные парковки, и, если вы знаете город так же хорошо, как мы, вы можете найти множество отличных мест, где можно остановиться, не получая штрафа и не получая просьбу уехать. Итак, давайте узнаем больше о нескольких из этих мест, которые неоднократно проверялись на их целесообразность и эффективность.",
+    bottom_text_en:
       "The Palm Jumeirah is a hand-made archipelago built with the use of land reclamation. Designed to look like a branchy palm tree, it is a well-recognized example of modern urban planning and architectural excellence. No wonder that Palm Jumeirah attracts tons of people who are eager to capture its fashionable background. The place becomes especially desirable if you have, if only on a temporary basis, a car that you’ve always dreamed of. Palm Jumeirah is a truly number one location that offers plenty of stunning views that cannot be covered in this short article. Just come, and you will see for yourself that the place gives thousands of great opportunities to capture the car and yourself against the background of striking architecture mixed with blue and green areas. Shooting here will fill your pictures with a unique atmosphere of sea space skillfully blended with amazing structures.",
+    bottom_text_ru:
+      "Пальма Джумейра - это рукотворный архипелаг, построенный с использованием намыва земель. Созданный в виде ветвистой пальмы, он является общепризнанным примером современного градостроительства и архитектурного совершенства. Неудивительно, что Пальма Джумейра привлекает множество людей, жаждущих запечатлеть ее модный фон. Место становится особенно желанным, если у вас есть, пусть даже временно, машина, о которой вы всегда мечтали. Пальма Джумейра - это действительно номер один место, которое предлагает множество потрясающих видов, которые невозможно охватить в этой короткой статье. Просто приезжайте, и вы сами увидите, что это место дает тысячи отличных возможностей, чтобы запечатлеть машину и себя на фоне поразительной архитектуры, смешанной с синими и зелеными зонами. Съемка здесь наполнит ваши фотографии уникальной атмосферой морского пространства, мастерски соединенного с удивительными сооружениями.",
   },
   {
     id: 3,
     img: "https://terra-rentacar.netlify.app/assets/blog-3-BRfPXlF4.jpg",
-    title: "Top 5 Reasons to Rent a Car Dubai Style this Summer",
-    text: "Summer is more than just a beach and a body, and Autozoom Luxury Car Rental is more than just a regular car hire business. We're your one-stop four-wheel solution to making the most of your time in Dubai.",
-    date: "31 Jul 2022",
-    inbox_title: "Burj Khalifa",
-    top_text:
+    title_en: "Top 5 Reasons to Rent a Car Dubai Style this Summer",
+    title_ru: "Топ-5 причин арендовать автомобиль в Дубае этим летом",
+    text_en:
+      "Summer is more than just a beach and a body, and Autozoom Luxury Car Rental is more than just a regular car hire business. We're your one-stop four-wheel solution to making the most of your time in Dubai.",
+    text_ru:
+      "Лето - это не только пляж и тело, а Autozoom Luxury Car Rental - это больше, чем просто обычная компания по прокату автомобилей. Мы - ваше универсальное решение на четырех колесах, чтобы максимально использовать ваше время в Дубае.",
+    date_en: "31 Jul 2022",
+    date_ru: "31 июля 2022",
+    inbox_title_en: "Burj Khalifa",
+    inbox_title_ru: "Бурдж-Халифа",
+    top_text_en:
       "Get as more as you possibly can from your holiday or business trip to Dubai by visiting a huge number of places each time in a different car ! Summer is more than just a beach and a body, and Autozoom Luxury Car Rental is more than just a regular car hire business. We're your one-stop four-wheel solution to making the most of your time in Dubai. If you are in the search of a speedy and stylish vehicle that could help you explore this beautiful city in the most comfortable way, contact our offices before this amazing summer is over! You still can make it in time to benefit from our set of summer offers that we call Trinity Summer Hot Deals, each of which lets you to pay for a car hire nearly 30-50% less than usual. Not only we have one of the widest breadths of luxury and sports cars in Dubai. Our two huge car-hire yards allow us to provide a lot of hot deals supported by the closest attention and expertise of our staff. In our face you will meet a faithful, sincere, and reliable friend ready to give you the detailed professional advice on renting wisely, beneficially, and safely.",
-    bottom_text:
+    top_text_ru:
+      "Получите максимум от своего отдыха или деловой поездки в Дубай, посещая множество мест каждый раз на разной машине! Лето - это больше, чем просто пляж и тело, а Autozoom Luxury Car Rental - это больше, чем просто обычный прокат автомобилей. Мы - ваше единое решение для четырехколесного путешествия, чтобы получить максимум от вашего времени в Дубае. Если вы ищете быстрой и стильной машины, которая поможет вам исследовать этот прекрасный город с максимальным комфортом, свяжитесь с нашими офисами, прежде чем это удивительное лето закончится! У вас еще есть время, чтобы воспользоваться нашими летними предложениями, которые мы называем Trinity Summer Hot Deals, каждое из которых позволяет вам оплатить прокат автомобиля почти на 30-50% дешевле, чем обычно. Мы не только имеем один из самых широких выборов роскошных и спортивных автомобилей в Дубае. Наши два огромных склада позволяют предлагать множество выгодных предложений, подкрепленных вниманием и экспертизой нашего персонала. С нами вы встретите верного, искреннего и надежного друга, готового дать вам подробный профессиональный совет по аренде мудро, выгодно и безопасно.",
+    bottom_text_en:
       "Late summer and early autumn is our usual time of best deals and promotions. We’ve prepared a nice surprise for everyone who is crazy about adventure and driving! These days you can get one of the best car hiring offers in the city, which will allow you to drive the coolest cars in the world, such as Rolls Royce, Lamborghini, or Ferrari at knockdown prices! But let’s begin from the beginning, and consider the most feasible reasons why you need to hire a car while on holiday, study, or a working visit in Dubai.",
+    bottom_text_ru:
+      "Позднее лето и ранняя осень - это наше обычное время лучших предложений и акций. Мы приготовили приятный сюрприз для всех, кто без ума от приключений и вождения! В эти дни вы можете получить одно из лучших предложений по аренде автомобилей в городе, которое позволит вам прокатиться на самых крутых автомобилях в мире, таких как Rolls Royce, Lamborghini или Ferrari по сниженным ценам! Но давайте начнем с самого начала и рассмотрим наиболее веские причины, почему вам нужно арендовать автомобиль во время отдыха, учебы или рабочей поездки в Дубаи.",
   },
 ];

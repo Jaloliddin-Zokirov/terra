@@ -1,26 +1,31 @@
 import { CircleChevronRight } from "lucide-react";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import InstagramSlider from "./components/InstagramSlider";
 import { blogInfo } from "./data";
 
 const Blog = () => {
+  const { lang } = useSelector((state) => state.lang);
+
   return (
     <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
         {/* breadcrumb */}
         <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
           <Link className="hover:text-blue-500" to="/">
-            Luxury Cars for Rent in Dubai
+            {lang === "eng"
+              ? "Luxury Cars for Rent in Dubai"
+              : "Аренда люксовых и спортивных авто"}
           </Link>
           <span> / </span>
           <Link className="hover:text-blue-500" to="/">
-            BLOG
+            {lang === "eng" ? "BLOG" : "ПОЛЕЗНЫЕ СТАТЬИ"}
           </Link>
         </p>
         {/* title */}
         <h3 className="text-white text-2xl md:text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
-          BLOG
+          {lang === "eng" ? "BLOG" : "ПОЛЕЗНЫЕ СТАТЬИ"}
         </h3>
         {blogInfo.map((item, index) => (
           <div
@@ -33,13 +38,13 @@ const Blog = () => {
               </div>
               <div className="col-span-12 lg:col-span-8">
                 <h2 className="text-2xl lg:text-4xl mb-6 font-semibold">
-                  {item.title}
+                  {lang === "eng" ? item.title_en : item.title_ru}
                 </h2>
                 <p className="text-sm md:text-lg font-serif">
-                  {item.text}
+                  {lang === "eng" ? item.text_en : item.text_ru}
                 </p>
                 <div className="flex items-center justify-between pt-2">
-                  <span>{item.date}</span>
+                  <span>{lang === "eng" ? item.date_en : item.date_ru}</span>
                   <Link
                     to={`/blog/${item.id}`}
                     className="transform hover:scale-110"
@@ -51,7 +56,7 @@ const Blog = () => {
             </div>
           </div>
         ))}
-        <InstagramSlider/>
+        <InstagramSlider />
       </div>
     </div>
   );

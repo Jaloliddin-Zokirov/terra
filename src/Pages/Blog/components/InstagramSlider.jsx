@@ -1,11 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const InstagramSlider = () => {
+  const { lang } = useSelector((state) => state.lang);
   return (
     <div>
       <h3 className="sm:text-2xl md:text-3xl font-semibold text-white py-10">
-        FOLLOW US ON INSTAGRAM
+        {lang === "eng"
+          ? " FOLLOW US ON INSTAGRAM"
+          : "ПОДПИСЫВАЙТЕСЬ НА НАС В ИНСТАГРАМ"}
       </h3>
       <Swiper slidesPerView={6} spaceBetween={15} className="cursor-pointer">
         <SwiperSlide>
@@ -72,7 +76,7 @@ const InstagramSlider = () => {
       <div className="flex gap-16 mt-12">
         <div className="blog-1">
           <h3 className="sm:text-3xl md:text-4xl text-white font-semibold">
-            LOCATION
+            {lang === "eng" ? "LOCATION" : "ЛОКАЦИЯ"}
           </h3>
           <div className="links-location flex flex-col gap-3 mt-[15px]">
             <a
@@ -97,7 +101,7 @@ const InstagramSlider = () => {
         </div>
         <div class="blog-1">
           <h3 className="sm:text-3xl md:text-4xl text-white font-semibold">
-            CITY
+            {lang === "eng" ? "CITY" : "ГОРОД"}
           </h3>
           <div className="links-location flex flex-col gap-3 mt-[15px]">
             <a
