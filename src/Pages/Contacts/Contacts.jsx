@@ -1,10 +1,10 @@
 import React from "react";
-import { GoLocation } from "react-icons/go";
-import { BsTelephone } from "react-icons/bs";
 import { AiTwotoneMail } from "react-icons/ai";
-import BgImage from "../../../public/contact_bg-img.jpg";
+import { BsTelephone } from "react-icons/bs";
+import { GoLocation } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import BgImage from "../../../public/contact_bg-img.jpg";
 
 const Contacts = () => {
   const { lang } = useSelector((state) => state.lang);
