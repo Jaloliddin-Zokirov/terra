@@ -26,13 +26,13 @@ const Header = () => {
                 className="cursor-pointer"
                 onClick={() => dispatch(editLang("eng"))}
               >
-                <img src="flag_eng.png" width={25} height={25} alt="flag eng" />
+                <img src="/flag_eng.png" width={25} height={25} alt="flag eng" />
               </button>
               <button
                 className="cursor-pointer"
                 onClick={() => dispatch(editLang("ru"))}
               >
-                <img src="flag_rus.png" width={25} height={25} alt="flag rus" />
+                <img src="/flag_rus.png" width={25} height={25} alt="flag rus" />
               </button>
             </div>
 
@@ -93,7 +93,7 @@ const Header = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src="terra_logo.png"
+              src="/terra_logo.png"
               width={110}
               height={66}
               className="h-8"
