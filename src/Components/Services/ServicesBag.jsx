@@ -8,11 +8,17 @@ const ServicesBag = () => {
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
         {/* breadcrumbs */}
         <p className="text-[#fff9] text-sm font-normal text-center sm:text-left">
-          <Link className="hover:text-blue-500" to="/">Luxury Cars for Rent in Dubai </Link>
+          <Link className="hover:text-blue-500" to="/">
+            Luxury Cars for Rent in Dubai{" "}
+          </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to="/services">Services</Link>
+          <Link className="hover:text-blue-500" to="/services">
+            Services
+          </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to='/services/bag'>Ride a buggy in Dubai and have fun</Link>
+          <Link className="hover:text-blue-500" to="/services/bag">
+            Ride a buggy in Dubai and have fun
+          </Link>
         </p>
         {/* title */}
         <h3 className="text-white font-semibold text-center sm:text-left text-2xl sm:text-3xl my-12">
@@ -31,7 +37,7 @@ const ServicesBag = () => {
                 <p className="border border-solid text-lg border-[#11d198] py-1 px-5 rounded-lg text-white">
                   {item.count}
                 </p>
-                <p className="text-white">one person</p>
+                <p className="text-white">{item.number} person</p>
               </div>
               <p className="text-white mt-6">
                 Dune buggies in Dubai Book your ride on the most exciting
