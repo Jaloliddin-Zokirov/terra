@@ -1,6 +1,6 @@
 const CarVideoYoutube = () => {
   return (
-    <div className="bg-[#1E1F27] relative text-white py-12 px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12">
+    <section className="bg-[#1E1F27] relative text-white py-12 px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12">
 
       <div className="lg:w-3/5 w-full">
         <iframe
@@ -30,7 +30,7 @@ const CarVideoYoutube = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
