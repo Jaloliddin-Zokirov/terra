@@ -8,7 +8,6 @@ import About from "../Pages/About/About";
 import Contacts from "../Pages/Contacts/Contacts";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
-import ServicesCar from "../Components/Services/ServicesCar";
 import Condition from "../Pages/Condition/Condition";
 import Faq from "../Pages/Faq/Faq";
 import ServicesBag from "../Components/Services/ServicesBag";
@@ -38,10 +37,6 @@ const routes = createBrowserRouter([
       {
         path: "services/bag",
         element: <ServicesBag />,
-      },
-      {
-        path: "services/car",
-        element: <ServicesCar />,
       },
       {
         path: "about",

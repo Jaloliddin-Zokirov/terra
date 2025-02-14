@@ -1,19 +1,28 @@
 import { CircleChevronRight } from "lucide-react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  const { lang } = useSelector((state) => state.lang);
+
   return (
-    <div className="bg-[#1E1F27]">
+    <section className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
         {/* breadcrumb */}
         <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
-          <Link className="hover:text-blue-500" to="/">Luxury Cars for Rent in Dubai</Link>
+          <Link className="hover:text-blue-500" to="/">
+            {lang === "eng"
+              ? "Luxury Cars for Rent in Dubai"
+              : "Аренда люксовых и спортивных авто"}
+          </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to='/services'>Services</Link>
+          <Link className="hover:text-blue-500" to="/services">
+            {lang === "eng" ? "Services" : "Услуги"}
+          </Link>
         </p>
         {/* title */}
         <h3 className="text-white text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
-          SERVICES
+          {lang === "eng" ? "SERVICES" : "УСЛУГИ"}
         </h3>
         {/* services cards */}
         <div className="grid grid-cols-12 gap-y-12 gap-x-0 sm:gap-12">
@@ -25,17 +34,22 @@ const Services = () => {
               alt=""
             />
             <h4 className="text-white text-xl  sm:text-2xl my-2 font-semibold">
-              Ride a buggy in Dubai and have fun
+              {lang === "eng"
+                ? "Ride a buggy in Dubai and have fun"
+                : "Покатайтесь на багги в Дубае и получите удовольствие"}
             </h4>
             <p className="text-white text-base sm:text-lg my-4">
-              Experience the thrill of a dune buggy tour in Dubai with us. We
-              offer free hotel pick-up & drop-off service. Book now
+              {lang === "eng"
+                ? "Experience the thrill of a dune buggy tour in Dubai with us. We offer free hotel pick-up & drop-off service. Book now"
+                : "Почувствуйте азарт дюнного тура на багги в Дубае с нами. Мы предлагаем бесплатный трансфер от и до отеля. Бронируйте сейчас"}
             </p>
             <Link
               to="/services/bag"
               className="flex items-center justify-evenly w-[200px] hover:ml-4 duration-400 ease-out cursor-pointer"
             >
-              <p class="text-white font-bold">LEARN MORE</p>
+              <p class="text-white font-bold">
+                {lang === "eng" ? "LEARN MORE" : "УЗНАТЬ БОЛЬШЕ"}
+              </p>
               <CircleChevronRight className="size-8 text-white" />
             </Link>
           </div>
@@ -47,23 +61,28 @@ const Services = () => {
               alt=""
             />
             <h4 className="text-white text-xl  sm:text-2xl my-2 font-semibold">
-              Photoshoot with luxury car rental Dubai
+              {lang === "eng"
+                ? "Photoshoot with luxury car rental Dubai"
+                : "Фотосессия с арендой роскошного автомобиля в Дубае"}
             </h4>
             <p className="text-white text-text-base sm:text-lg my-4">
-              Professional car photoshoot as an additional type of with us
-              service at Terra Car Rental
+              {lang === "eng"
+                ? "Professional car photoshoot as an additional type of with us service at Terra Car Rental"
+                : "Профессиональная фотосессия автомобиля как дополнительный вид услуг в Terra Car Rental"}
             </p>
             <Link
-              to="/services/car"
+              to="/services/bag"
               className="flex items-center justify-evenly w-[200px] pt-8 hover:ml-4 duration-400 ease-out cursor-pointer"
             >
-              <p class="text-white font-bold">LEARN MORE</p>
+              <p class="text-white font-bold">
+                {lang === "eng" ? "LEARN MORE" : "УЗНАТЬ БОЛЬШЕ"}
+              </p>
               <CircleChevronRight className="size-8 text-white" />
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -7,7 +7,7 @@ export const LuxuryCar = () => {
   return (
     <section
       id="luxurycar"
-      className="relative md:py-[70px] z-[1] bg-[#272933]"
+      className="relative py-[25px] md:py-[70px] z-[1] bg-[#272933]"
     >
       <div className="container p-[15px]      relative z-[1]">
         <p className=" text-[28px] md:text-[40px] text-white font-semibold">
