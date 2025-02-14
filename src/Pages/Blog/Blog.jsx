@@ -1,5 +1,4 @@
 import { CircleChevronRight } from "lucide-react";
-import React from "react";
 import { Link } from "react-router-dom";
 import InstagramSlider from "./components/InstagramSlider";
 import { blogInfo } from "./data";

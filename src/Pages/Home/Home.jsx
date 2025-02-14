@@ -1,14 +1,19 @@
 import React from "react";
-import { SuperCar } from "./_components";
+import { CarVideoYoutube, SuperCar } from "./components";
 import { LuxuryCar } from "../../Components/LuxuryCar/LuxuryCar";
 import Brands from "../../Components/Brands/Brands";
+import Faq from "../Faq/Faq";
+import Services from "../../Components/Services/Services";
 
 const Home = () => {
   return (
     <section className="bg-[#111219] relative">
       <Brands />
-      <SuperCar />
+      <Services />
       <LuxuryCar />
+      <CarVideoYoutube />
+      <SuperCar />
+      <Faq />
     </section>
   );
 };

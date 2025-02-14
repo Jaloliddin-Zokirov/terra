@@ -1,9 +1,9 @@
 import React from "react";
-import { GoLocation } from "react-icons/go";
-import { BsTelephone } from "react-icons/bs";
 import { AiTwotoneMail } from "react-icons/ai";
-import BgImage from "../../../public/contact_bg-img.jpg";
+import { BsTelephone } from "react-icons/bs";
+import { GoLocation } from "react-icons/go";
 import { Link } from "react-router-dom";
+import BgImage from "../../../public/contact_bg-img.jpg";
 
 const Contacts = () => {
   return (
@@ -53,7 +53,6 @@ const Contacts = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            frameborder="0"
           ></iframe>
         </div>
       </div>
