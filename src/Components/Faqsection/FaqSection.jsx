@@ -5,9 +5,12 @@ import { useSelector } from "react-redux";
 
 export const FaqSection = () => {
   const { lang } = useSelector((state) => state.lang);
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState(null);
+  const handleOpen = (index) => {
+    setOpen(open === index ? null : index);
+  };
   return (
-    <section id="faqSection">
+    <section id="faqSection" className="faqsection">
       <div className=" mx-auto px-12 faq__inner  py-16   ">
         <h3 className="text-[32px] font-semibold text-white text-center">
           {lang === "eng" ? "FAQ" : "Часто задаваемые вопросы"}
@@ -16,7 +19,7 @@ export const FaqSection = () => {
         <div className="faq__info1 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={() => setOpen(1)}
+              onClick={() => handleOpen(1)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -54,7 +57,7 @@ export const FaqSection = () => {
         <div className="faq__info2 p-4 mx-auto  flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 items-center justify-center relative">
             <div
-              onClick={() => setOpen(2)}
+              onClick={() => handleOpen(2)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -92,7 +95,7 @@ export const FaqSection = () => {
         <div className="faq__info3 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={() => setOpen(3)}
+              onClick={() => handleOpen(3)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -130,7 +133,7 @@ export const FaqSection = () => {
         <div className="faq__info4 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={() => setOpen(4)}
+              onClick={() => handleOpen(4)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
@@ -168,7 +171,7 @@ export const FaqSection = () => {
         <div className="faq__info5 p-4 mx-auto flex flex-col items-center max-w-[900px] w-full">
           <div className="info1__title w-full flex flex-col gap-4 justify-center relative">
             <div
-              onClick={() => setOpen(5)}
+              onClick={() => handleOpen(5)}
               className="flex cursor-pointer mx-auto items-center"
             >
               <div className="rightbtn animate-bounce rotate-180   ">
