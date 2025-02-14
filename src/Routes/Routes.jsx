@@ -11,8 +11,8 @@ import Error from "../Pages/Error/Error";
 import ServicesCar from "../Components/Services/ServicesCar";
 import Condition from "../Pages/Condition/Condition";
 import Faq from "../Pages/Faq/Faq";
-import ServicesBag from "../Components/Services/ServicesBag";
 import BlogDetail from "../Pages/Blog/BlogDetail";
+import ServicesBug from "../Components/Services/ServicesBug";
 
 const routes = createBrowserRouter([
   {
@@ -36,8 +36,8 @@ const routes = createBrowserRouter([
         element: <Services />,
       },
       {
-        path: "services/bag",
-        element: <ServicesBag />,
+        path: "services/bug",
+        element: <ServicesBug />,
       },
       {
         path: "services/car",

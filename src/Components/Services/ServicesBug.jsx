@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { serviceBug, serviceBugCards } from "./data";
 
-const ServicesBag = () => {
+const ServicesBug = () => {
   return (
     <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
@@ -16,7 +16,7 @@ const ServicesBag = () => {
             Services
           </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to="/services/bag">
+          <Link className="hover:text-blue-500" to="/services/bug">
             Ride a buggy in Dubai and have fun
           </Link>
         </p>
@@ -68,4 +68,4 @@ const ServicesBag = () => {
   );
 };
 
-export default ServicesBag;
+export default ServicesBug;

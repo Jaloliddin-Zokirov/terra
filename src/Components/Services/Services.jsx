@@ -32,7 +32,7 @@ const Services = () => {
               offer free hotel pick-up & drop-off service. Book now
             </p>
             <Link
-              to="/services/bag"
+              to="/services/bug"
               className="flex items-center justify-evenly w-[200px] hover:ml-4 duration-400 ease-out cursor-pointer"
             >
               <p class="text-white font-bold">LEARN MORE</p>
