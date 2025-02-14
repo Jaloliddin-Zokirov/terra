@@ -8,6 +8,11 @@ import About from "../Pages/About/About";
 import Contacts from "../Pages/Contacts/Contacts";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
+import ServicesCar from "../Components/Services/ServicesCar";
+import Condition from "../Pages/Condition/Condition";
+import Faq from "../Pages/Faq/Faq";
+import ServicesBag from "../Components/Services/ServicesBag";
+import BlogDetail from "../Pages/Blog/BlogDetail";
 
 const routes = createBrowserRouter([
   {
@@ -31,6 +36,14 @@ const routes = createBrowserRouter([
         element: <Services />,
       },
       {
+        path: "services/bag",
+        element: <ServicesBag />,
+      },
+      {
+        path: "services/car",
+        element: <ServicesCar />,
+      },
+      {
         path: "about",
         element: <About />,
       },
@@ -41,6 +54,18 @@ const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "blog/:id",
+        element: <BlogDetail />,
+      },
+      {
+        path: "condition",
+        element: <Condition />,
+      },
+      {
+        path: "faq",
+        element: <Faq />,
       },
     ],
   },
