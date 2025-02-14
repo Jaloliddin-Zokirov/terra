@@ -15,7 +15,7 @@ export const blogInfo = [
     id: 2,
     img: "https://terra-rentacar.netlify.app/assets/blog-2-BV6fNMEe.jpg",
     title: "Top 5 wonderful spots for a car photo session in Dubai",
-    text: "There are so many wonderful things to do in Dubai,thatif not for a  And, while doing so, who could prove against the weakness of taking a photo of themselves inside or near the car they’ve rented?",
+    text: "There are so many wonderful things to do in Dubai, but when you rent a car your opportunities are nearly doubled. The number of places you will die to go to and make memorable pictures is such that it rented?",
     date: "11 Feb 2022",
     inbox_title: "Palm Jumeirah",
     top_text:

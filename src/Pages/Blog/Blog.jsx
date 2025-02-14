@@ -19,28 +19,30 @@ const Blog = () => {
           </Link>
         </p>
         {/* title */}
-        <h3 className="text-white text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
+        <h3 className="text-white text-2xl md:text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
           BLOG
         </h3>
         {blogInfo.map((item, index) => (
           <div
-            class="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-6"
+            className="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-6"
             key={index}
           >
-            <div class="flex items-center gap-8">
-              <div>
-                <img class="size-92" src={item.img} alt="img" />
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-12 lg:col-span-4">
+                <img className="" src={item.img} alt="img" />
               </div>
-              <div class="info flex flex-col justify-between gap-3 mt-6 p768:mt-0">
-                <h2 class="text-4xl mb-4 p768:mb-[35px] leading-[110%] font-semibold mt-2">
+              <div className="col-span-12 lg:col-span-8">
+                <h2 className="text-2xl lg:text-4xl mb-6 font-semibold">
                   {item.title}
                 </h2>
-                <p class="text-base py- p480:text-lg font-serif">{item.text}</p>
-                <div class="flex items-center justify-between">
+                <p className="text-sm md:text-lg font-serif">
+                  {item.text}
+                </p>
+                <div className="flex items-center justify-between pt-2">
                   <span>{item.date}</span>
                   <Link
                     to={`/blog/${item.id}`}
-                    class="transform hover:scale-110"
+                    className="transform hover:scale-110"
                   >
                     <CircleChevronRight />
                   </Link>
@@ -49,7 +51,7 @@ const Blog = () => {
             </div>
           </div>
         ))}
-        <InstagramSlider />
+        <InstagramSlider/>
       </div>
     </div>
   );

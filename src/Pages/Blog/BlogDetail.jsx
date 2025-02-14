@@ -8,7 +8,7 @@ const BlogDetail = () => {
   console.log(data);
   return (
     <div className="bg-[#1E1F27]">
-      <div className="max-w-[1300px] mx-auto py-6">
+      <div className="max-w-[1300px] mx-auto py-6 p-4">
         {/* breadcrumb */}
         <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
           <Link className="hover:text-blue-500" to="/">

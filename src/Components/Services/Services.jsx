@@ -7,9 +7,13 @@ const Services = () => {
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
         {/* breadcrumb */}
         <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
-          <Link className="hover:text-blue-500" to="/">Luxury Cars for Rent in Dubai</Link>
+          <Link className="hover:text-blue-500" to="/">
+            Luxury Cars for Rent in Dubai
+          </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to='/services'>Services</Link>
+          <Link className="hover:text-blue-500" to="/services">
+            Services
+          </Link>
         </p>
         {/* title */}
         <h3 className="text-white text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
@@ -46,16 +50,16 @@ const Services = () => {
               src="https://terra-rentacar.netlify.app/assets/uslug-2-LkBjqsZl.jpg"
               alt=""
             />
-            <h4 className="text-white text-xl  sm:text-2xl my-2 font-semibold">
+            <h4 className="text-white text-xl sm:text-2xl my-2 font-semibold">
               Photoshoot with luxury car rental Dubai
             </h4>
-            <p className="text-white text-text-base sm:text-lg my-4">
-              Professional car photoshoot as an additional type of with us
-              service at Terra Car Rental
+            <p className="text-white text-text-base sm:text-lg my-3">
+              Professional car photoshoot as an tour in with dune
+              additional type of service at Terra Car Rental
             </p>
             <Link
               to="/services/car"
-              className="flex items-center justify-evenly w-[200px] pt-8 hover:ml-4 duration-400 ease-out cursor-pointer"
+              className="flex items-center justify-evenly w-[200px] hover:ml-4 duration-400 ease-out cursor-pointer"
             >
               <p class="text-white font-bold">LEARN MORE</p>
               <CircleChevronRight className="size-8 text-white" />
