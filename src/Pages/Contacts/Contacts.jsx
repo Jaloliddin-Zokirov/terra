@@ -4,8 +4,10 @@ import { BsTelephone } from "react-icons/bs";
 import { AiTwotoneMail } from "react-icons/ai";
 import BgImage from "../../../public/contact_bg-img.jpg";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Contacts = () => {
+  const { lang } = useSelector((state) => state.lang);
   return (
     <section className="relative contact-page py-14">
       <img
@@ -16,21 +18,26 @@ const Contacts = () => {
 
       <div className="container relative  px-4 text-white">
         <Link to="/" className="text-[14px] text-[#fff9]">
-          Luxury Cars for Rent in Dubai / Contacts
+          {lang === "eng"
+            ? " Luxury Cars for Rent in Dubai / Contacts"
+            : "Аренда люксовых и спортивных авто / Контакты"}
         </Link>
         <h3 className="text-[22px] text-center min-[480px]:text-left min-[480px]:text-[36px] py-[10px] md:py-[40px] font-semibold">
-          Have Any Question?
+          {lang === "eng" ? "Have Any Question?" : "НАШИ КОНТАКТЫ"}
         </h3>
         <p className="text-[#fff9] text-center min-[480px]:text-left mb-[10px] md:mb-[90px]">
-          {" "}
-          We well be glad to help
+          {lang === "eng" ? "We well be glad to help" : "Будем рады помочь"}
         </p>
-        <h4 className="text-[26px] ml-[45px] font-bold">Head Office</h4>
+        <h4 className="text-[26px] ml-[45px] font-bold">
+          {lang === "eng" ? "Head Office" : "Главный офис"}
+        </h4>
         <div className="contact__links flex flex-col gap-2 mt-6">
           <div className="flex items-center gap-7">
             <GoLocation fill="#c9c6c6" />
             <p className="text-[18px] font-semibold">
-              Elite 3 Sports City, Dubai 26W8 24J, United Arab Emirates
+              {lang === "eng"
+                ? " Elite 3 Sports City, Dubai 26W8 24J, United Arab Emirates"
+                : "Спортивный комплекс Elite 3, Дубай 26W8 24J, Объединенные Арабские Эмираты"}
             </p>
           </div>
           <Link className="flex items-center gap-7" to="#">
@@ -53,7 +60,7 @@ const Contacts = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
       </div>

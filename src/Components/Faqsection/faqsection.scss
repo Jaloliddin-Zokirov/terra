@@ -1,3 +1,7 @@
+.faqsection {
+  position: relative;
+}
+
 .faq__inner::before {
   background-image: url("../../../public/faq-bg_img.png");
   background-repeat: no-repeat;

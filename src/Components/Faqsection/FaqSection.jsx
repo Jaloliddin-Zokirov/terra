@@ -7,7 +7,7 @@ export const FaqSection = () => {
   const { lang } = useSelector((state) => state.lang);
   const [open, setOpen] = useState();
   return (
-    <section id="faqSection">
+    <section id="faqSection" className="faqsection">
       <div className=" mx-auto px-12 faq__inner  py-16   ">
         <h3 className="text-[32px] font-semibold text-white text-center">
           {lang === "eng" ? "FAQ" : "Часто задаваемые вопросы"}
