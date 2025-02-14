@@ -67,11 +67,11 @@ const routes = createBrowserRouter([
         path: "faq",
         element: <Faq />,
       },
+      {
+        path: "*",
+        element: <Error />,
+      },
     ],
-  },
-  {
-    path: "*",
-    element: <Error />,
   },
 ]);
 
