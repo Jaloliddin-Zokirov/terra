@@ -1,7 +1,7 @@
 const SuperCar = () => {
   return (
-      <div className="flex flex-col md:flex-row mt-8 lg:mt-28">
-        <div className="w-full md:w-1/2 h-[269px] bg-[url('/assets/bgfilter-car.webp')] bg-cover bg-center" />
+      <section className="flex flex-col md:flex-row mt-8 lg:mt-28">
+        <div className="w-full md:w-1/2 h-[269px] filter sepia brightness-125 saturate-150 bg-[url('/assets/bgfilter-car.webp')] bg-cover bg-center" />
         <div className="w-full md:w-1/2 bg-[#343744] p-8 text-white">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 max-w-lg">
             SUPERCAR RENTAL DUBAI
@@ -15,7 +15,7 @@ const SuperCar = () => {
             </svg>
           </button>
         </div>
-      </div>
+      </section>
   )
 }
 
