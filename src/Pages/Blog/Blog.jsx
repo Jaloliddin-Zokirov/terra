@@ -8,14 +8,19 @@ const Blog = () => {
   return (
     <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
-        <a
-          href="/"
-          className="text-left text-[#fff9] text-sm font-normal p480:text-left"
-        >
-          Luxury Cars for Rent in Dubai / Services
-        </a>
-        <h3 className="text-white text-4xl text-left p480:text-left p480:text-4xl my-12 font-semibold">
-          Blog
+        {/* breadcrumb */}
+        <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
+          <Link className="hover:text-blue-500" to="/">
+            Luxury Cars for Rent in Dubai
+          </Link>
+          <span> / </span>
+          <Link className="hover:text-blue-500" to="/">
+            BLOG
+          </Link>
+        </p>
+        {/* title */}
+        <h3 className="text-white text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
+          BLOG
         </h3>
         {blogInfo.map((item, index) => (
           <div
