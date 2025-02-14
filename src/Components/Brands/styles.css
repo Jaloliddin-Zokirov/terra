@@ -23,9 +23,9 @@ body {
 }
 
 .link {
-    height: 100%;
-    min-height: 195px;
-    box-shadow: 0 0 2px 1px #4d4c4c;
+  height: 100%;
+  min-height: 195px;
+  box-shadow: 0 0 2px 1px #4d4c4c;
 }
 
 .swiper-slide:after {

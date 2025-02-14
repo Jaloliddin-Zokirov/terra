@@ -47,7 +47,7 @@ const Services = () => {
               to="/services/bag"
               className="flex items-center justify-evenly w-[200px] hover:ml-4 duration-400 ease-out cursor-pointer"
             >
-              <p class="text-white font-bold">
+              <p className="text-white font-bold">
                 {lang === "eng" ? "LEARN MORE" : "УЗНАТЬ БОЛЬШЕ"}
               </p>
               <CircleChevronRight className="size-8 text-white" />
@@ -74,7 +74,7 @@ const Services = () => {
               to="/services/bag"
               className="flex items-center justify-evenly w-[200px] pt-8 hover:ml-4 duration-400 ease-out cursor-pointer"
             >
-              <p class="text-white font-bold">
+              <p className="text-white font-bold">
                 {lang === "eng" ? "LEARN MORE" : "УЗНАТЬ БОЛЬШЕ"}
               </p>
               <CircleChevronRight className="size-8 text-white" />

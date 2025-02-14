@@ -61,15 +61,15 @@ const ServicesBag = () => {
                 {lang === "eng" ? "Package Inclusions:" : "Включено в пакет:"}
               </h1>
               {serviceBug.map((item, index) => (
-                <div class="flex items-center gap-5 mt-[15px]" key={index}>
+                <div className="flex items-center gap-5 mt-[15px]" key={index}>
                   <img src={item.img} alt={item.title} />
-                  <p class="text-white text-[18px] font-semibold">
+                  <p className="text-white text-[18px] font-semibold">
                     {lang === "eng" ? item.title : item.titleRu}
                   </p>
                 </div>
               ))}
               <a href="tel:+998990000441">
-                <button class="w-full bg-[#fe363b] mt-[15px] text-white py-3 font-bold text-[26px] cursor-pointer rounded-2xl">
+                <button className="w-full bg-[#fe363b] mt-[15px] text-white py-3 font-bold text-[26px] cursor-pointer rounded-2xl">
                   {lang === "eng" ? "BOOK NOW" : "ЗАБРОНИРОВАТЬ СЕЙЧАС"}
                 </button>
               </a>
