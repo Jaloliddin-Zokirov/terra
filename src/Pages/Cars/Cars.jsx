@@ -2,6 +2,7 @@ import { MessageCircle, Send } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Forimage, axios } from '../../Server/Api';
+import { scrollToTop } from '../../utils';
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
@@ -15,6 +16,7 @@ const Cars = () => {
       setCars(data.data);
       setFilteredCars(data.data);
     });
+    scrollToTop();
   }, []);
 
   // Get unique car types and brands
