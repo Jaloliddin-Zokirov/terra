@@ -1,51 +1,54 @@
 import { MessageCircle, Send } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { axios } from '../../Server/Api';
+import { Forimage, axios } from '../../Server/Api';
 
 const Cars = () => {
+  const [cars, setCars] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCarTypes, setSelectedCarTypes] = useState([]);
   const [selectedModel, setSelectedModel] = useState('');
 
-  // useEffect(() => {
-  //   axios.get('/cars').then(({data}) => {console.log(data.data)})
-  // }, [])
+  useEffect(() => {
+    axios.get('/cars').then(({data}) => {setCars(data.data)})
+  }, [])
 
-  const cars = [
-    {
-      id: 1,
-      name: 'BMW M5 F90',
-      image: '',
-      price: { AED: 2000, USD: 2000 },
-      brand: 'BMW',
-      type: 'M8'
-    },
-    {
-      id: 2,
-      name: 'Lambargini 911',
-      image: '',
-      price: { AED: 4000, USD: 4000 },
-      brand: 'Lambargini',
-      type: 'Sports'
-    },
-    {
-      id: 3,
-      name: 'BMW Chiron',
-      image: '',
-      price: { AED: 540, USD: 679 },
-      brand: 'BMW',
-      type: 'Luxury'
-    },
-    {
-      id: 4,
-      name: 'Ford Mustang',
-      image: '',
-      price: { AED: 4000, USD: 5000 },
-      brand: 'Ford',
-      type: 'FORD'
-    }
-  ];
+  console.log(cars)
+
+  // const cars = [
+  //   {
+  //     id: 1,
+  //     name: 'BMW M5 F90',
+  //     image: '',
+  //     price: { AED: 2000, USD: 2000 },
+  //     brand: 'BMW',
+  //     type: 'M8'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Lambargini 911',
+  //     image: '',
+  //     price: { AED: 4000, USD: 4000 },
+  //     brand: 'Lambargini',
+  //     type: 'Sports'
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'BMW Chiron',
+  //     image: '',
+  //     price: { AED: 540, USD: 679 },
+  //     brand: 'BMW',
+  //     type: 'Luxury'
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Ford Mustang',
+  //     image: '',
+  //     price: { AED: 4000, USD: 5000 },
+  //     brand: 'Ford',
+  //     type: 'FORD'
+  //   }
+  // ];
 
   const brands = ['BMW', 'Lambargini', 'Ford', 'Bentle'];
   const carTypes = ['M8', 'FORD'];
@@ -145,17 +148,17 @@ const Cars = () => {
                 <div key={car.id} className="bg-gray-800 rounded-lg overflow-hidden">
                   <Link to={`/cars/${car.id}`}>
                     <img
-                      src={car.image}
-                      alt={car.name}
+                      src={`${Forimage}/${car.car_images[0].image.src}`}
+                      alt={`${car.brand.title} ${car.model.name}`}
                       className="w-full h-48 object-cover"
                     />
                   </Link>
                   <div className="p-4">
-                    <h3 className="text-xl font-semibold mb-2">{car.name}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{car.brand.title} {car.model.name}</h3>
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <span className="text-lg font-bold">AED {car.price.AED}</span>
-                        <span className="text-gray-400 ml-2">/ $ {car.price.USD}</span>
+                        <span className="text-lg font-bold">AED {car.price_in_aed}</span>
+                        <span className="text-gray-400 ml-2">/ $ {car.price_in_usd}</span>
                       </div>
                       <span className="text-gray-400">per day</span>
                     </div>
