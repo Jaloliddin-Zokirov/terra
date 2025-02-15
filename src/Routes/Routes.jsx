@@ -12,6 +12,7 @@ import Condition from "../Pages/Condition/Condition";
 import Faq from "../Pages/Faq/Faq";
 import ServicesBag from "../Components/Services/ServicesBag";
 import BlogDetail from "../Pages/Blog/BlogDetail";
+import CarDetail from "../Components/CarDetail/CarDetail";
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
       {
         path: "cars",
         element: <Cars />,
+      },
+      {
+        path: "cars/:id",
+        element: <CarDetail />
       },
       {
         path: "brands",
