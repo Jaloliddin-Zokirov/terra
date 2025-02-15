@@ -1,21 +1,17 @@
-import { Link } from "react-router-dom"
+import { useSelector } from "react-redux";
+import SeeAllBtn from "../../../Components/Buttons/SeeAllBtn";
 
 const SuperCar = () => {
+  const { lang } = useSelector((state) => state.lang);
   return (
       <section className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 h-[269px] filter sepia brightness-125 saturate-150 bg-[url('/assets/bgfilter-car.webp')] bg-cover bg-center" />
         <div className="w-full md:w-1/2 bg-[#343744] p-8 text-white">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 max-w-lg">
-            SUPERCAR RENTAL DUBAI
+            {lang === 'eng' ?'SUPERCAR RENTAL DUBAI' : 'АРЕНДА СУПЕРКАРОВ В ДУБАЕ'}
           </h2>
-          <p className="text-lg mb-8">Hire the latest supercar</p>
-          <Link to={'cars'} className="group flex items-center gap-2 text-sm lg:text-lg transition-all hover:gap-4 hover:cursor-pointer hover:text-red-500">
-            SEE ALL
-            <svg className="w-8 h-8 transition-transform group-hover:translate-x-1" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path className="fill-white group-hover:fill-red-500 transition-colors" d="M13 10L21 16.5L13 23L17.5714 16.5L13 10Z" />
-              <circle className="stroke-white group-hover:stroke-red-500 transition-colors" cx="16" cy="16" r="15.5" />
-            </svg>
-          </Link>
+          <p className="text-lg mb-8">{lang === 'eng' ? 'Hire the latest supercar' : 'Возьмите напрокат новейший суперкар'}</p>
+          <SeeAllBtn />
         </div>
       </section>
   )

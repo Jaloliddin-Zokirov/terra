@@ -1,10 +1,13 @@
 import { MessageCircle, Send } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Forimage, axios } from '../../Server/Api';
 import { scrollToTop } from '../../utils';
 
 const Cars = () => {
+  const { lang } = useSelector((state) => state.lang);
+
   const [cars, setCars] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCarTypes, setSelectedCarTypes] = useState([]);
@@ -69,7 +72,7 @@ const Cars = () => {
       <header className="p-6 border-b border-gray-800">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-red-600 text-2xl font-bold tracking-wider">TERRA</h1>
-          <p className="text-gray-400 mt-2">Luxury Cars for Rent in Dubai / Hire the latest supercar</p>
+          <p className="text-gray-400 mt-2">{lang === 'eng' ? 'Luxury Cars for Rent in Dubai / Hire the latest supercar' : 'Аренда роскошных автомобилей в Дубае / Возьмите напрокат новейший суперкар'}</p>
         </div>
       </header>
 
@@ -78,10 +81,10 @@ const Cars = () => {
           {/* Sidebar */}
           <div className="lg:w-64 flex-shrink-0">
             <div className="bg-gray-800 rounded-lg p-6">
-              <h2 className="text-xl font-semibold mb-6">Filter By</h2>
+              <h2 className="text-xl font-semibold mb-6">{lang === 'eng' ?'Filter By': 'Фильтровать по'}</h2>
               
               <div className="mb-6">
-                <h3 className="text-lg mb-3">Car type</h3>
+                <h3 className="text-lg mb-3">{lang === 'eng' ? 'Car type' : 'Тип машины'}</h3>
                 {uniqueCarTypes.map(carType => (
                   <label key={carType} className="flex items-center mb-2">
                     <input
@@ -102,7 +105,7 @@ const Cars = () => {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-lg mb-3">Brand</h3>
+                <h3 className="text-lg mb-3">{lang === 'eng' ? 'Brand' : 'Бренд'}</h3>
                 {uniqueBrands.map(brand => (
                   <label key={brand} className="flex items-center mb-2">
                     <input
@@ -123,13 +126,13 @@ const Cars = () => {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-lg mb-3">Model</h3>
+                <h3 className="text-lg mb-3">{lang === 'eng' ? 'Model' : 'Модель'}</h3>
                 <select
                   className="w-full bg-gray-700 rounded p-2"
                   value={selectedModel}
                   onChange={(e) => setSelectedModel(e.target.value)}
                 >
-                  <option value="">Select a model</option>
+                  <option value="">{lang === 'eng' ? 'Select a model' : 'Выбрать модель'}</option>
                   {cars.map(car => (
                     <option key={car.id} value={car.model.name}>{car.model.name}</option>
                   ))}
@@ -141,13 +144,13 @@ const Cars = () => {
                   className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
                   onClick={resetFilters}
                 >
-                  Reset
+                  {lang === 'eng' ? 'Reset' : 'Сброс'}
                 </button>
                 <button 
                   className="px-4 py-2 bg-green-600 rounded hover:bg-green-500 transition"
                   onClick={applyFilters}
                 >
-                  Apply filter
+                  {lang === 'eng' ? 'Apply filter' : 'Фильтровать'}
                 </button>
               </div>
             </div>
