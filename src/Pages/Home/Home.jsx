@@ -8,15 +8,15 @@ import { TopLuxury } from "../../Components/TopLuxury/TopLuxury";
 
 const Home = () => {
   return (
-    <section className="bg-[#111219] relative">
-      <TopLuxury />
+    <>
+    <TopLuxury />
       <Brands />
       <Services />
       <LuxuryCar />
       <CarVideoYoutube />
       <SuperCar />
       <Faq />
-    </section>
+    </>
   );
 };
 
