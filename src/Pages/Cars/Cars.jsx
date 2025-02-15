@@ -8,50 +8,59 @@ const Cars = () => {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCarTypes, setSelectedCarTypes] = useState([]);
   const [selectedModel, setSelectedModel] = useState('');
+  const [filteredCars, setFilteredCars] = useState([]);
 
   useEffect(() => {
-    axios.get('/cars').then(({data}) => {setCars(data.data)})
-  }, [])
+    axios.get('/cars').then(({data}) => {
+      setCars(data.data);
+      setFilteredCars(data.data);
+    });
+  }, []);
 
-  console.log(cars)
+  // Get unique car types and brands
+  const uniqueCarTypes = Array.from(
+    new Set(cars.map(car => car.category.name_en))
+  );
+  
+  const uniqueBrands = Array.from(
+    new Set(cars.map(car => car.brand.title))
+  );
 
-  // const cars = [
-  //   {
-  //     id: 1,
-  //     name: 'BMW M5 F90',
-  //     image: '',
-  //     price: { AED: 2000, USD: 2000 },
-  //     brand: 'BMW',
-  //     type: 'M8'
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Lambargini 911',
-  //     image: '',
-  //     price: { AED: 4000, USD: 4000 },
-  //     brand: 'Lambargini',
-  //     type: 'Sports'
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'BMW Chiron',
-  //     image: '',
-  //     price: { AED: 540, USD: 679 },
-  //     brand: 'BMW',
-  //     type: 'Luxury'
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'Ford Mustang',
-  //     image: '',
-  //     price: { AED: 4000, USD: 5000 },
-  //     brand: 'Ford',
-  //     type: 'FORD'
-  //   }
-  // ];
+  // Apply filters
+  const applyFilters = () => {
+    let filtered = [...cars];
 
-  const brands = ['BMW', 'Lambargini', 'Ford', 'Bentle'];
-  const carTypes = ['M8', 'FORD'];
+    // Filter by car type
+    if (selectedCarTypes.length > 0) {
+      filtered = filtered.filter(car => 
+        selectedCarTypes.includes(car.category.name_en)
+      );
+    }
+
+    // Filter by brand
+    if (selectedBrands.length > 0) {
+      filtered = filtered.filter(car => 
+        selectedBrands.includes(car.brand.title)
+      );
+    }
+
+    // Filter by model
+    if (selectedModel) {
+      filtered = filtered.filter(car => 
+        car.model.name === selectedModel
+      );
+    }
+
+    setFilteredCars(filtered);
+  };
+
+  // Reset filters
+  const resetFilters = () => {
+    setSelectedCarTypes([]);
+    setSelectedBrands([]);
+    setSelectedModel('');
+    setFilteredCars(cars);
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -70,34 +79,29 @@ const Cars = () => {
               <h2 className="text-xl font-semibold mb-6">Filter By</h2>
               
               <div className="mb-6">
-                <h3 className="text-lg mb-3">Offers</h3>
-                <div className="h-px bg-gray-700 mb-4"></div>
-              </div>
-
-              <div className="mb-6">
                 <h3 className="text-lg mb-3">Car type</h3>
-                {carTypes.map(type => (
-                  <label key={type} className="flex items-center mb-2">
+                {uniqueCarTypes.map(carType => (
+                  <label key={carType} className="flex items-center mb-2">
                     <input
                       type="checkbox"
-                      className="form-checkbox text-green-500 rounded"
-                      checked={selectedCarTypes.includes(type)}
+                      className="form-checkbox rounded"
+                      checked={selectedCarTypes.includes(carType)}
                       onChange={() => {
                         setSelectedCarTypes(prev =>
-                          prev.includes(type)
-                            ? prev.filter(t => t !== type)
-                            : [...prev, type]
+                          prev.includes(carType)
+                            ? prev.filter(t => t !== carType)
+                            : [...prev, carType]
                         );
                       }}
                     />
-                    <span className="ml-2">{type}</span>
+                    <span className="ml-2">{carType}</span>
                   </label>
                 ))}
               </div>
 
               <div className="mb-6">
                 <h3 className="text-lg mb-3">Brand</h3>
-                {brands.map(brand => (
+                {uniqueBrands.map(brand => (
                   <label key={brand} className="flex items-center mb-2">
                     <input
                       type="checkbox"
@@ -125,16 +129,22 @@ const Cars = () => {
                 >
                   <option value="">Select a model</option>
                   {cars.map(car => (
-                    <option key={car.id} value={car.name}>{car.name}</option>
+                    <option key={car.id} value={car.model.name}>{car.model.name}</option>
                   ))}
                 </select>
               </div>
 
               <div className="flex gap-4">
-                <button className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition">
+                <button 
+                  className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+                  onClick={resetFilters}
+                >
                   Reset
                 </button>
-                <button className="px-4 py-2 bg-green-600 rounded hover:bg-green-500 transition">
+                <button 
+                  className="px-4 py-2 bg-green-600 rounded hover:bg-green-500 transition"
+                  onClick={applyFilters}
+                >
                   Apply filter
                 </button>
               </div>
@@ -144,7 +154,7 @@ const Cars = () => {
           {/* Main Content */}
           <div className="flex-1">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {cars.map(car => (
+              {filteredCars.length ? filteredCars.map(car => (
                 <div key={car.id} className="bg-gray-800 rounded-lg overflow-hidden">
                   <Link to={`/cars/${car.id}`}>
                     <img
@@ -174,7 +184,10 @@ const Cars = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))
+            :
+              "NO DATA"
+            }
             </div>
           </div>
         </div>
