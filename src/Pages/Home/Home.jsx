@@ -5,12 +5,14 @@ import Brands from "../../Components/Brands/Brands";
 import Faq from "../Faq/Faq";
 import Services from "../../Components/Services/Services";
 import { TopLuxury } from "../../Components/TopLuxury/TopLuxury";
+import CarCardHomePage from "../CarCardHomePage/CarCardHomePage";
 
 const Home = () => {
   return (
     <>
     <TopLuxury />
       <Brands />
+      <CarCardHomePage />
       <Services />
       <LuxuryCar />
       <CarVideoYoutube />

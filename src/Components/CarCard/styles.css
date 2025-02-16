@@ -1,0 +1,8 @@
+.card:hover {
+  background: linear-gradient(
+    161.55deg,
+    rgba(255, 255, 255, 0.294) -9.06%,
+    rgba(17, 18, 25, 0.592) 39.4%,
+    rgb(17, 18, 25)
+  );
+}
