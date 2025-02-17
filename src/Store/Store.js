@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import Error from "./Error/Error";
-import Lang from './Lang/Lang'
+import Lang from './Lang/Lang';
 
 const Store = configureStore({
   reducer: {
@@ -10,3 +10,4 @@ const Store = configureStore({
 });
 
 export default Store;
+

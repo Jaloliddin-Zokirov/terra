@@ -1,13 +1,14 @@
 import { MessageCircle, Send } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Forimage, axios } from '../../Server/Api';
 import { scrollToTop } from '../../utils';
 
 const Cars = () => {
   const { lang } = useSelector((state) => state.lang);
-
+  const location = useLocation();
+  
   const [cars, setCars] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCarTypes, setSelectedCarTypes] = useState([]);
@@ -17,10 +18,19 @@ const Cars = () => {
   useEffect(() => {
     axios.get('/cars').then(({data}) => {
       setCars(data.data);
-      setFilteredCars(data.data);
+      
+      if (location.state?.categoryName) {
+        const filtered = data.data.filter(car => 
+          car.category.name_en === location.state.categoryName
+        );
+        setFilteredCars(filtered);
+        setSelectedCarTypes([location.state.categoryName]);
+      } else {
+        setFilteredCars(data.data);
+      }
     });
     scrollToTop();
-  }, []);
+  }, [location.state]);
 
   // Get unique car types and brands
   const uniqueCarTypes = Array.from(
