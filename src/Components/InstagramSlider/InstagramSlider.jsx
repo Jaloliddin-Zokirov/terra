@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const InstagramSlider = () => {
   const { lang } = useSelector((state) => state.lang);
   return (
-    <div>
+    <div className="max-w-[1300px] mx-auto py-6 p-4">
       <h3 className="sm:text-2xl md:text-3xl font-semibold text-white py-10">
         {lang === "eng"
           ? " FOLLOW US ON INSTAGRAM"
@@ -99,7 +99,7 @@ const InstagramSlider = () => {
             </a>
           </div>
         </div>
-        <div class="blog-1">
+        <div className="blog-1">
           <h3 className="sm:text-3xl md:text-4xl text-white font-semibold">
             {lang === "eng" ? "CITY" : "ГОРОД"}
           </h3>

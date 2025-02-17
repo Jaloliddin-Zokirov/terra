@@ -2,7 +2,7 @@ import { CircleChevronRight } from "lucide-react";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import InstagramSlider from "./components/InstagramSlider";
+import InstagramSlider from "../../Components/InstagramSlider/InstagramSlider";
 import { blogInfo } from "./data";
 
 const Blog = () => {
@@ -56,7 +56,6 @@ const Blog = () => {
             </div>
           </div>
         ))}
-        <InstagramSlider />
       </div>
     </div>
   );

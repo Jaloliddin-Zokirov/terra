@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Services = () => {
   const { lang } = useSelector((state) => state.lang);
-
   return (
     <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
@@ -47,7 +46,7 @@ const Services = () => {
               to="/services/bug"
               className="flex items-center justify-evenly w-[200px] hover:ml-4 duration-400 ease-out cursor-pointer"
             >
-              <p class="text-white font-bold">
+              <p className="text-white font-bold">
                 {lang === "eng" ? "LEARN MORE" : "УСЛУГИ"}
               </p>
               <CircleChevronRight className="size-8 text-white" />
@@ -74,7 +73,7 @@ const Services = () => {
               to="/services/car"
               className="flex items-center justify-evenly w-[200px] hover:ml-4 pt-1 duration-400 ease-out cursor-pointer"
             >
-              <p class="text-white font-bold">
+              <p className="text-white font-bold">
                 {lang === "eng" ? "LEARN MORE" : "УСЛУГИ"}
               </p>
               <CircleChevronRight className="size-8 text-white" />

@@ -8,10 +8,10 @@ import About from "../Pages/About/About";
 import Contacts from "../Pages/Contacts/Contacts";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
-import ServicesCar from "../Components/Services/ServicesCar";
 import Condition from "../Pages/Condition/Condition";
 import Faq from "../Pages/Faq/Faq";
 import BlogDetail from "../Pages/Blog/BlogDetail";
+import CarDetail from "../Components/CarDetail/CarDetail";
 import ServicesBug from "../Components/Services/ServicesBug";
 
 const routes = createBrowserRouter([
@@ -28,6 +28,10 @@ const routes = createBrowserRouter([
         element: <Cars />,
       },
       {
+        path: "cars/:id",
+        element: <CarDetail />
+      },
+      {
         path: "brands",
         element: <Brands />,
       },
@@ -38,10 +42,6 @@ const routes = createBrowserRouter([
       {
         path: "services/bug",
         element: <ServicesBug />,
-      },
-      {
-        path: "services/car",
-        element: <ServicesCar />,
       },
       {
         path: "about",
