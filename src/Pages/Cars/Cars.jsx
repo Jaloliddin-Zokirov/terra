@@ -1,63 +1,60 @@
 import { MessageCircle, Send } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Forimage, axios } from "../../Server/Api";
 import { scrollToTop } from "../../utils";
 
 const Cars = () => {
   const { lang } = useSelector((state) => state.lang);
-  const location = useLocation();
+  const { search } = useSelector((state) => state.search);
 
   const [cars, setCars] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
+
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCarTypes, setSelectedCarTypes] = useState([]);
   const [selectedModel, setSelectedModel] = useState("");
-  const [filteredCars, setFilteredCars] = useState([]);
+
+  const [tempBrands, setTempBrands] = useState([]);
+  const [tempCarTypes, setTempCarTypes] = useState([]);
+  const [tempModel, setTempModel] = useState("");
 
   useEffect(() => {
     axios.get("/cars").then(({ data }) => {
       setCars(data.data);
-
-      if (location.state?.categoryName) {
-        const filtered = data.data.filter(
-          (car) => car.category.name_en === location.state.categoryName
-        );
-        setFilteredCars(filtered);
-        setSelectedCarTypes([location.state.categoryName]);
-      } else {
-        setFilteredCars(data.data);
-      }
+      setFilteredCars(data.data);
     });
     scrollToTop();
-  }, [location.state]);
+  }, []);
 
-  // Get unique car types and brands
-  const uniqueCarTypes = Array.from(
-    new Set(cars.map((car) => car.category.name_en))
-  );
+  useEffect(() => {
+    if (search.trim() !== "") {
+      setFilteredCars(
+        cars.filter(
+          (car) =>
+            car.brand.title.toLowerCase().includes(search.toLowerCase()) ||
+            car.model.name.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    }
+  }, [search, cars]);
 
-  const uniqueBrands = Array.from(new Set(cars.map((car) => car.brand.title)));
-
-  // Apply filters
   const applyFilters = () => {
     let filtered = [...cars];
 
-    // Filter by car type
     if (selectedCarTypes.length > 0) {
       filtered = filtered.filter((car) =>
         selectedCarTypes.includes(car.category.name_en)
       );
     }
 
-    // Filter by brand
     if (selectedBrands.length > 0) {
       filtered = filtered.filter((car) =>
         selectedBrands.includes(car.brand.title)
       );
     }
 
-    // Filter by model
     if (selectedModel) {
       filtered = filtered.filter((car) => car.model.name === selectedModel);
     }
@@ -65,13 +62,27 @@ const Cars = () => {
     setFilteredCars(filtered);
   };
 
-  // Reset filters
+  const handleApplyFilters = () => {
+    setSelectedCarTypes(tempCarTypes);
+    setSelectedBrands(tempBrands);
+    setSelectedModel(tempModel);
+    applyFilters();
+  };
+
   const resetFilters = () => {
     setSelectedCarTypes([]);
     setSelectedBrands([]);
     setSelectedModel("");
+    setTempCarTypes([]);
+    setTempBrands([]);
+    setTempModel("");
     setFilteredCars(cars);
   };
+
+  const uniqueCarTypes = Array.from(
+    new Set(cars.map((car) => car.category.name_en))
+  );
+  const uniqueBrands = Array.from(new Set(cars.map((car) => car.brand.title)));
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -106,9 +117,9 @@ const Cars = () => {
                     <input
                       type="checkbox"
                       className="form-checkbox rounded"
-                      checked={selectedCarTypes.includes(carType)}
+                      checked={tempCarTypes.includes(carType)}
                       onChange={() => {
-                        setSelectedCarTypes((prev) =>
+                        setTempCarTypes((prev) =>
                           prev.includes(carType)
                             ? prev.filter((t) => t !== carType)
                             : [...prev, carType]
@@ -129,9 +140,9 @@ const Cars = () => {
                     <input
                       type="checkbox"
                       className="form-checkbox text-green-500 rounded"
-                      checked={selectedBrands.includes(brand)}
+                      checked={tempBrands.includes(brand)}
                       onChange={() => {
-                        setSelectedBrands((prev) =>
+                        setTempBrands((prev) =>
                           prev.includes(brand)
                             ? prev.filter((b) => b !== brand)
                             : [...prev, brand]
@@ -149,8 +160,8 @@ const Cars = () => {
                 </h3>
                 <select
                   className="w-full bg-gray-700 rounded p-2"
-                  value={selectedModel}
-                  onChange={(e) => setSelectedModel(e.target.value)}
+                  value={tempModel}
+                  onChange={(e) => setTempModel(e.target.value)}
                 >
                   <option value="">
                     {lang === "eng" ? "Select a model" : "Выбрать модель"}
@@ -172,7 +183,7 @@ const Cars = () => {
                 </button>
                 <button
                   className="px-4 py-2 bg-green-600 rounded hover:bg-green-500 transition"
-                  onClick={applyFilters}
+                  onClick={handleApplyFilters}
                 >
                   {lang === "eng" ? "Apply filter" : "Фильтровать"}
                 </button>

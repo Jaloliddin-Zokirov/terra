@@ -26,9 +26,6 @@ const CarDetail = () => {
 
   const car = cars?.find((el) => el?.id === id);
 
-  console.log(car);
-  
-
   return (
     <section className="py-10">
       <div className="container">

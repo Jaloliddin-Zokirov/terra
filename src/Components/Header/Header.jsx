@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { editLang } from "../../Store/Lang/Lang";
+import { editSearch } from "../../Store/Search/Search";
 
 const Header = () => {
   const [modal, setModal] = useState(false);
   const { lang } = useSelector((state) => state.lang);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (modal) {
@@ -94,6 +96,12 @@ const Header = () => {
                 id="search-navbar"
                 className="block w-full p-3.5 ps-10 text-sm text-white focus-visible:outline-none focus-visible:ring-0 rounded-[12px] bg-gradient-to-r from-[#2d2e31] to-[#111219]"
                 placeholder={lang === "eng" ? "Search..." : "Поиск..."}
+                onChange={(evt) => dispatch(editSearch(evt?.target?.value))}
+                onKeyDown={(evt) => {
+                  if (evt.key === "Enter") {
+                    navigate("/cars");
+                  }
+                }}
               />
             </div>
           </div>
