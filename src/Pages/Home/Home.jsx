@@ -6,11 +6,12 @@ import Faq from "../Faq/Faq";
 import Services from "../../Components/Services/Services";
 import { TopLuxury } from "../../Components/TopLuxury/TopLuxury";
 import CarCardHomePage from "../CarCardHomePage/CarCardHomePage";
+import InstagramSlider from "../../Components/InstagramSlider/InstagramSlider";
 
 const Home = () => {
   return (
     <>
-    <TopLuxury />
+      <TopLuxury />
       <Brands />
       <CarCardHomePage />
       <Services />
@@ -18,6 +19,7 @@ const Home = () => {
       <CarVideoYoutube />
       <SuperCar />
       <Faq />
+      <InstagramSlider />
     </>
   );
 };

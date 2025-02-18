@@ -10,9 +10,9 @@ import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
 import Condition from "../Pages/Condition/Condition";
 import Faq from "../Pages/Faq/Faq";
-import ServicesBag from "../Components/Services/ServicesBag";
 import BlogDetail from "../Pages/Blog/BlogDetail";
 import CarDetail from "../Components/CarDetail/CarDetail";
+import ServicesBug from "../Components/Services/ServicesBug";
 
 const routes = createBrowserRouter([
   {
@@ -40,8 +40,8 @@ const routes = createBrowserRouter([
         element: <Services />,
       },
       {
-        path: "services/bag",
-        element: <ServicesBag />,
+        path: "services/bug",
+        element: <ServicesBug />,
       },
       {
         path: "about",
@@ -67,11 +67,11 @@ const routes = createBrowserRouter([
         path: "faq",
         element: <Faq />,
       },
+      {
+        path: "*",
+        element: <Error />,
+      },
     ],
-  },
-  {
-    path: "*",
-    element: <Error />,
   },
 ]);
 

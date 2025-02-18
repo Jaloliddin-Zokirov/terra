@@ -1,54 +1,52 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { blogInfo } from "./data";
 import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { blogInfo } from "./data";
 
 const BlogDetail = () => {
+  const { lang } = useSelector((state) => state.lang);
   const { id } = useParams();
   var data = blogInfo.filter((item) => item.id === parseInt(id));
-  const { lang } = useSelector((state) => state.lang);
-
+  console.log(data);
   return (
-    <section className="py-6 mx-auto bg-[#1e1f27]">
-      <div className="container">
-        <p className="text-[#fff9] text-sm font-normal text-center sm:text-left mb-8">
+    <div className="bg-[#1E1F27]">
+      <div className="max-w-[1300px] mx-auto py-6 p-4">
+        {/* breadcrumb */}
+        <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
           <Link className="hover:text-blue-500" to="/">
             {lang === "eng"
-              ? "Luxory Cars for Dubai"
-              : "Роскошные автомобили для Дубая"}
+              ? "Luxury Cars for Rent in Dubai"
+              : "Аренда люксовых и спортивных авто"}
           </Link>
           <span> / </span>
           <Link className="hover:text-blue-500" to="/blog">
-            {lang === "eng" ? "Blog" : "Blog"}
+            {lang === "eng" ? "BLOG" : "ПОЛЕЗНЫЕ СТАТЬИ"}
           </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to="">
+          <Link className="hover:text-blue-500" to="/">
             {lang === "eng"
-              ? "Top 5 Reasons to Rent a Car Dubai"
+              ? "Top 5 Reason to Rent a Car Dubai"
               : "Топ-5 причин арендовать автомобиль в Дубае"}
           </Link>
         </p>
+
         {data.map((item, index) => (
           <div key={index} className="text-white">
-            <h2 className="text-3xl mb-6">
-              {lang === "eng" ? item.title : item.titleRu}
+            <h2 className="text-[22px] md:text-[50px] mt-7 md:mt-24 mb-2 md:mb-10 font-semibold text-center">
+              {lang === "eng" ? item.title_en : item.title_ru}
             </h2>
-            <p className="mb-4">
-              {lang === "eng" ? item.top_text : item.top_textRu}
+            <p className="text-xl font-normal py-2">
+              {lang === "eng" ? item.top_text_en : item.top_text_ru}
             </p>
-            <h5 className="mb-4">
-              {lang === "eng" ? item.inbox_title : item.inbox_titleRu}
+            <h5 className="font-semibold py-3">
+              {lang === "eng" ? item.inbox_title_en : item.inbox_title_ru}
             </h5>
-            <img
-              className="w-full sm:h-[350px] md:h-[500px] mb-4"
-              src={item.img}
-              alt=""
-            />
-            <p>{lang === "eng" ? item.bottom_text : item.bottom_textRu}</p>
+            <img className="w-full py-4" src={item.img} alt="" />
+            <p> {lang === "eng" ? item.bottom_text_en : item.bottom_text_ru}</p>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

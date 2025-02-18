@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 
 const Services = () => {
   const { lang } = useSelector((state) => state.lang);
-
   return (
-    <section className="bg-[#1E1F27]">
+    <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
         {/* breadcrumb */}
         <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
@@ -44,11 +43,11 @@ const Services = () => {
                 : "Почувствуйте азарт дюнного тура на багги в Дубае с нами. Мы предлагаем бесплатный трансфер от и до отеля. Бронируйте сейчас"}
             </p>
             <Link
-              to="/services/bag"
+              to="/services/bug"
               className="flex items-center justify-evenly w-[200px] hover:ml-4 duration-400 ease-out cursor-pointer"
             >
               <p className="text-white font-bold">
-                {lang === "eng" ? "LEARN MORE" : "УЗНАТЬ БОЛЬШЕ"}
+                {lang === "eng" ? "LEARN MORE" : "УСЛУГИ"}
               </p>
               <CircleChevronRight className="size-8 text-white" />
             </Link>
@@ -60,29 +59,29 @@ const Services = () => {
               src="https://terra-rentacar.netlify.app/assets/uslug-2-LkBjqsZl.jpg"
               alt=""
             />
-            <h4 className="text-white text-xl  sm:text-2xl my-2 font-semibold">
+            <h4 className="text-white text-xl sm:text-2xl my-2 font-semibold">
               {lang === "eng"
-                ? "Photoshoot with luxury car rental Dubai"
+                ? " Photoshoot with luxury car rental Dubai"
                 : "Фотосессия с арендой роскошного автомобиля в Дубае"}
             </h4>
-            <p className="text-white text-text-base sm:text-lg my-4">
+            <p className="text-white text-text-base sm:text-lg my-3">
               {lang === "eng"
-                ? "Professional car photoshoot as an additional type of with us service at Terra Car Rental"
+                ? "Professional car photoshoot as an additional luxury in car without type of service at Terra Car Rental"
                 : "Профессиональная фотосессия автомобиля как дополнительный вид услуг в Terra Car Rental"}
             </p>
             <Link
-              to="/services/bag"
-              className="flex items-center justify-evenly w-[200px] pt-8 hover:ml-4 duration-400 ease-out cursor-pointer"
+              to="/services/car"
+              className="flex items-center justify-evenly w-[200px] hover:ml-4 pt-1 duration-400 ease-out cursor-pointer"
             >
               <p className="text-white font-bold">
-                {lang === "eng" ? "LEARN MORE" : "УЗНАТЬ БОЛЬШЕ"}
+                {lang === "eng" ? "LEARN MORE" : "УСЛУГИ"}
               </p>
               <CircleChevronRight className="size-8 text-white" />
             </Link>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

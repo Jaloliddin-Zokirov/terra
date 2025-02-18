@@ -1,55 +1,53 @@
 import { CircleChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { blogInfo } from "./data";
+import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import InstagramSlider from "../../Components/InstagramSlider/InstagramSlider";
+import { blogInfo } from "./data";
 
 const Blog = () => {
   const { lang } = useSelector((state) => state.lang);
 
   return (
-    <section className="bg-[#1E1F27]">
+    <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">
-        <p className="text-[#fff9] text-sm font-normal text-center sm:text-left">
+        {/* breadcrumb */}
+        <p className="block text-[#fff9] text-sm font-normal text-center sm:text-left">
           <Link className="hover:text-blue-500" to="/">
             {lang === "eng"
-              ? "Luxory Cars for Dubai"
-              : "Роскошные автомобили для Дубая"}
+              ? "Luxury Cars for Rent in Dubai"
+              : "Аренда люксовых и спортивных авто"}
           </Link>
           <span> / </span>
-          <Link className="hover:text-blue-500" to="/blog">
-            {lang === "eng" ? "Blog" : "Blog"}
+          <Link className="hover:text-blue-500" to="/">
+            {lang === "eng" ? "BLOG" : "ПОЛЕЗНЫЕ СТАТЬИ"}
           </Link>
         </p>
-        <h3 className="text-white text-4xl text-left p480:text-left p480:text-4xl my-12 font-semibold">
-          {lang === "eng" ? "Blog" : "ПОЛЕЗНЫЕ СТАТЬИ"}
+        {/* title */}
+        <h3 className="text-white text-2xl md:text-4xl text-center sm:text-left sm:text-4xl my-12 font-semibold">
+          {lang === "eng" ? "BLOG" : "ПОЛЕЗНЫЕ СТАТЬИ"}
         </h3>
         {blogInfo.map((item, index) => (
           <div
-            class="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-6"
+            className="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-6"
             key={index}
           >
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div class="w-full h-[400px] max-[600px]:h-[300px] md:w-[220px] md:h-[250px]">
-                <img
-                  class="w-full h-full max-[600px]:h-[300px] md:h-[250px]"
-                  width={220}
-                  height={250}
-                  src={item.img}
-                  alt="img"
-                />
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-12 lg:col-span-4">
+                <img className="" src={item.img} alt="img" />
               </div>
-              <div class="info w-[78%] flex flex-col justify-between gap-3 mt-6">
-                <h2 class="text-4xl mb-4 p768:mb-[35px] leading-[110%] font-semibold mt-2">
-                  {lang === "eng" ? item.title : item.titleRu}
+              <div className="col-span-12 lg:col-span-8">
+                <h2 className="text-2xl lg:text-4xl mb-6 font-semibold">
+                  {lang === "eng" ? item.title_en : item.title_ru}
                 </h2>
-                <p class="text-base sm:text-lg font-serif">
-                  {lang === "eng" ? item.text : item.textRu}
+                <p className="text-sm md:text-lg font-serif">
+                  {lang === "eng" ? item.text_en : item.text_ru}
                 </p>
-                <div class="flex items-center justify-between">
-                  <span>{lang === "eng" ? item.date : item.dataRu}</span>
+                <div className="flex items-center justify-between pt-2">
+                  <span>{lang === "eng" ? item.date_en : item.date_ru}</span>
                   <Link
                     to={`/blog/${item.id}`}
-                    class="transform hover:scale-110"
+                    className="transform hover:scale-110"
                   >
                     <CircleChevronRight />
                   </Link>
@@ -59,7 +57,7 @@ const Blog = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
