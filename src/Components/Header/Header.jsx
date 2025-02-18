@@ -6,6 +6,7 @@ import { editSearch } from "../../Store/Search/Search";
 
 const Header = () => {
   const [modal, setModal] = useState(false);
+  const [searchIcon, setSearchIcon] = useState(false);
   const { lang } = useSelector((state) => state.lang);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const Header = () => {
             </div>
 
             <button
+              onClick={() => setSearchIcon(!searchIcon)}
               type="button"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
@@ -72,7 +74,7 @@ const Header = () => {
               </svg>
               <span className="sr-only">Search</span>
             </button>
-            <div className="relative hidden md:block w-full max-w-[350px] lg:max-w-[350px]">
+            <div className={`${searchIcon ? 'w-full absolute top-[15%] left-[50%] -translate-x-[50%] z-30 bg-gradient-to-r from-[#242527] via-[#5B5B5E] to-[#38393D]' : 'hidden relative'}  rounded-[12px] md:block w-full max-w-[350px] lg:max-w-[350px]'}`}>
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg
                   className="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -89,16 +91,17 @@ const Header = () => {
                     d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                   />
                 </svg>
-                <span className="sr-only">Search icon</span>
+                <span  className="sr-only">Search icon</span>
               </div>
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-3.5 ps-10 text-sm text-white focus-visible:outline-none focus-visible:ring-0 rounded-[12px] bg-gradient-to-r from-[#2d2e31] to-[#111219]"
+                className="block w-full p-3.5 ps-10 text-sm text-white focus-visible:outline-none focus-visible:ring-0 rounded-[12px] md:bg-gradient-to-r md:from-[#2d2e31] md:to-[#111219]"
                 placeholder={lang === "eng" ? "Search..." : "Поиск..."}
                 onChange={(evt) => dispatch(editSearch(evt?.target?.value))}
                 onKeyDown={(evt) => {
                   if (evt.key === "Enter") {
+                    setSearchIcon(!searchIcon)
                     navigate("/cars");
                   }
                 }}
