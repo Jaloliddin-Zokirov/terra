@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiTwotoneMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import BgImage from "../../../public/contact_bg-img.jpg";
+import { scrollToTop } from "../../utils";
 
 const Contacts = () => {
   const { lang } = useSelector((state) => state.lang);
+  useEffect(() => {
+    scrollToTop();
+  }, [])
   return (
     <section className="relative contact-page py-14">
       <img

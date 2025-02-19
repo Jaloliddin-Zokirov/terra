@@ -1,13 +1,16 @@
 import { CircleChevronRight } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import InstagramSlider from "../../Components/InstagramSlider/InstagramSlider";
 import { blogInfo } from "./data";
+import { scrollToTop } from "../../utils";
 
 const Blog = () => {
   const { lang } = useSelector((state) => state.lang);
-
+  useEffect(() => {
+    scrollToTop();
+  }, [])
   return (
     <div className="bg-[#1E1F27]">
       <div className="px-8 py-8 max-w-[1300px] mx-auto">

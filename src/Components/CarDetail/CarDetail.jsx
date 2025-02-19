@@ -10,27 +10,51 @@ import "swiper/css/thumbs";
 import "./styles.scss";
 import { useParams } from "react-router-dom";
 import CarCard from "../CarCard/CarCard";
+import { scrollToTop } from "../../utils";
+import Loading from "../Loading/Loading";
 
 const CarDetail = () => {
   const { lang } = useSelector((state) => state.lang);
   const [cars, setCars] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    axios
-      .get("/cars")
-      .then(({ data }) => setCars(data?.data))
-      .catch(console.error);
+    scrollToTop();
+  }, []);
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get("/cars");
+        setCars(response?.data?.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCars();
   }, []);
 
   const car = cars?.find((el) => el?.id === id);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (!car) {
+    return <div>Car not found</div>;
+  }
 
   return (
     <section className="py-10">
       <div className="container">
         <h2 className="text-white mb-4 text-[28px] text-center md:text-left md:ml-6 md:text-[50px] font-semibold uppercase">
-          {car ? `${car.model.name} (${car.color})` : ""}
+          {car ? `${car?.model.name} (${car?.color})` : ""}
         </h2>
         <div className="flex-col xl:flex xl:flex-row gap-4 items-start justify-between">
           <div className="mb-6">

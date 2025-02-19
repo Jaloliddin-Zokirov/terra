@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux";
 import LuxurCar1 from "../../../public/luxury_left.png";
 import LuxurCar2 from "../../../public/luxury_right.png";
+import { useEffect } from "react";
+import { scrollToTop } from "../../utils";
 
 export const LuxuryCar = () => {
   const { lang } = useSelector((state) => state.lang);
+  useEffect(() => {
+    scrollToTop();
+  }, []);
   return (
     <section
       id="luxurycar"

@@ -1,17 +1,20 @@
 import { CircleChevronRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CarCard from "../../Components/CarCard/CarCard";
 import { axios } from "../../Server/Api";
+import Loading from '../../Components/Loading/Loading'
+import { scrollToTop } from "../../utils";
 
 const CarCardHomePage = () => {
-  const { lang } = useSelector((state) => state.lang);
   const [categories, setCategories] = useState(null);
   const [cars, setCars] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  useEffect(() => {
+    scrollToTop();
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,13 +76,7 @@ const CarCardHomePage = () => {
 
   if (isLoading) {
     return (
-      <section className="py-6">
-        <div className="container">
-          <div className="flex justify-center items-center min-h-[200px]">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
-          </div>
-        </div>
-      </section>
+      <Loading />
     );
   }
 

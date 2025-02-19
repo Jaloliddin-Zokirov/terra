@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Forimage } from "../../Server/Api";
 import "./styles.css";
+import { scrollToTop } from "../../utils";
 
 const CarCard = ({ cars }) => {
+  const [click, setClick] = useState(null);
+  useEffect(() => {
+    scrollToTop();
+  }, [click]);
   return (
     <div className="allproductsCon flex flex-wrap gap-4 justify-center xl:justify-start p-1">
       {cars?.map((el) => {
@@ -13,6 +18,7 @@ const CarCard = ({ cars }) => {
           <Link
             to={`/cars/${el.id}`}
             key={el.id}
+            onClick={() => setClick(el.id)}
             className="router-link-active router-link-exact-active"
           >
             <div className="card min-h-[450px] p768:w-[300px] py-[30px] px-[15px] flex flex-col justify-between rounded-2xl aos-init aos-animate border border-gray-400">
@@ -45,4 +51,3 @@ const CarCard = ({ cars }) => {
 };
 
 export default CarCard;
-
