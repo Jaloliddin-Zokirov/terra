@@ -3,18 +3,32 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { axios } from "../../Server/Api";
+import Loading from "../Loading/Loading";
 
 const Footer = () => {
   const { lang } = useSelector((state) => state.lang);
   const [categories, setCategories] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    try {
-      axios.get(`/categories`).then((res) => setCategories(res?.data?.data));
-    } catch (error) {
-      console.log(error);
-    }
+    const fetchCategories = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get("/categories");
+        setCategories(response?.data?.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <footer className="relative bg-[#111219] z-10">

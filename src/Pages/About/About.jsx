@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import BgImage from "../../../public/about_bg-img.png";
 import { useSelector } from "react-redux";
+import { scrollToTop } from "../../utils";
 
 const About = () => {
   const { lang } = useSelector((state) => state.lang);
+  useEffect(() => {
+    scrollToTop();
+  }, [])
   return (
     <section id="about" className="relative about min-[480px]:py-[50px]">
       <img

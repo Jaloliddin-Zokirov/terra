@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { blogInfo } from "./data";
+import { scrollToTop } from "../../utils";
 
 const BlogDetail = () => {
   const { lang } = useSelector((state) => state.lang);
   const { id } = useParams();
   var data = blogInfo.filter((item) => item.id === parseInt(id));
-  console.log(data);
+  useEffect(() => {
+    scrollToTop();
+  }, [])
   return (
     <div className="bg-[#1E1F27]">
       <div className="max-w-[1300px] mx-auto py-6 p-4">

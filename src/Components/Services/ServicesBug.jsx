@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { serviceBug, serviceBugCards } from "./data";
+import { scrollToTop } from "../../utils";
 
 const ServicesBug = () => {
   const { lang } = useSelector((state) => state.lang);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <div className="bg-[#1E1F27]">
