@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { insSlider } from "./data";
 
 const InstagramSlider = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -11,67 +12,28 @@ const InstagramSlider = () => {
           ? " FOLLOW US ON INSTAGRAM"
           : "ПОДПИСЫВАЙТЕСЬ НА НАС В ИНСТАГРАМ"}
       </h3>
-      <Swiper slidesPerView={6} spaceBetween={15} className="cursor-pointer">
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/1T-D45PTDEI.jpg"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/2T-B1mJGEs-.jpg"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/3T-BkJVRiBs.webp"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/4T-BGQV6HlH.jpg"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/5T-BISrHmDi.jpg"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/6T-Bs7OhdEn.webp"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/7T-DB-zL0r0.webp"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/8T-Dve_QKXj.webp"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/9T-BtgLeMAz.webp"
-            alt="img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://terra-rentacar.netlify.app/assets/10T-C3d3mJb9.webp"
-            alt="img"
-          />
-        </SwiperSlide>
+      <Swiper
+        className="cursor-pointer"
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          640: {
+            slidesPerView: 6,
+            spaceBetween: 20,
+          },
+        }}
+      >
+        {insSlider.map((item, index) => (
+          <SwiperSlide key={index} className="text-center lg:w-full h-full">
+            <img src={item.img} alt="img" />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="flex gap-16 mt-12">
         <div className="blog-1">
